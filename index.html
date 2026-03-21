@@ -8,9 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:wght@200;300;400&family=IBM+Plex+Mono:wght@300;400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'IBM Plex Mono',monospace;color:#2a2a28}
-body::before{content:'seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · ';position:fixed;inset:0;z-index:0;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.03em;line-height:1.9;color:#1a1a18;opacity:.055;word-break:break-all;padding:1rem;pointer-events:none}
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 1.2s ease;overflow:hidden}
-#intro-khipu{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 #intro.out{opacity:0;pointer-events:none}
 #intro h1{font-family:'DM Sans',sans-serif;font-style:normal;font-weight:200;font-size:clamp(1.1rem,2.5vw,1.8rem);text-align:center;line-height:1.6;max-width:580px;padding:0 2rem;color:#1a1a18;letter-spacing:-.01em;opacity:0;animation:rise 1.5s ease .5s forwards}
 #intro .sub{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:#7a7870;margin-top:1.5rem;opacity:0;animation:rise 1.5s ease 1.5s forwards}
@@ -67,122 +65,6 @@ body::before{content:'seguindo cientistas e engenheiros · seguindo cientistas e
   <div id="lightbox-caption"></div>
 </div>
 <div id="intro">
-<svg id="intro-khipu" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="opacity:.09">
-  <!-- corda horizontal principal (eixo do khipu) -->
-  <path d="M-20,140 Q200,132 400,138 Q600,144 800,136 Q1000,130 1200,140 Q1350,146 1420,142" fill="none" stroke="#7a5c42" stroke-width="5" stroke-linecap="round"/>
-  <!-- sombra da corda principal -->
-  <path d="M-20,140 Q200,132 400,138 Q600,144 800,136 Q1000,130 1200,140 Q1350,146 1420,142" fill="none" stroke="#e2d9c8" stroke-width="8" stroke-linecap="round" opacity=".5"/>
-
-  <!-- cordas pendentes com nós — geradas em JS abaixo, aqui estão as principais -->
-  <!-- corda 1 -->
-  <path d="M60,139 C58,220 62,320 55,480 C50,600 48,700 52,900" fill="none" stroke="#c9b898" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M60,139 C58,220 62,320 55,480 C50,600 48,700 52,900" fill="none" stroke="#7a5c42" stroke-width="1.1" stroke-dasharray="5 7" stroke-linecap="round" opacity=".5"/>
-  <ellipse cx="57" cy="270" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2.5" transform="rotate(-3,57,270)"/>
-  <ellipse cx="54" cy="490" rx="5" ry="8" fill="none" stroke="#a08060" stroke-width="2.5" transform="rotate(2,54,490)"/>
-
-  <!-- corda 2 -->
-  <path d="M130,137 C132,200 128,310 135,450 C140,570 136,680 130,900" fill="none" stroke="#d4c4a0" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M130,137 C132,200 128,310 135,450 C140,570 136,680 130,900" fill="none" stroke="#7a5c42" stroke-width="1" stroke-dasharray="4 8" stroke-linecap="round" opacity=".45"/>
-  <ellipse cx="131" cy="320" rx="4.5" ry="7" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(2,131,320)"/>
-
-  <!-- corda 3 — mais curta -->
-  <path d="M195,138 C193,210 197,290 190,380" fill="none" stroke="#c9b898" stroke-width="3" stroke-linecap="round"/>
-  <path d="M195,138 C193,210 197,290 190,380" fill="none" stroke="#7a5c42" stroke-width="1" stroke-dasharray="5 6" stroke-linecap="round" opacity=".45"/>
-  <ellipse cx="192" cy="240" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(-2,192,240)"/>
-  <ellipse cx="190" cy="360" rx="4" ry="6" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(3,190,360)"/>
-
-  <!-- corda 4 -->
-  <path d="M265,140 C267,230 263,360 270,520 C274,640 270,760 264,900" fill="none" stroke="#b8a880" stroke-width="3.4" stroke-linecap="round"/>
-  <path d="M265,140 C267,230 263,360 270,520 C274,640 270,760 264,900" fill="none" stroke="#6b4e30" stroke-width="1.2" stroke-dasharray="4.5 7" stroke-linecap="round" opacity=".5"/>
-  <ellipse cx="266" cy="290" rx="5.5" ry="8" fill="none" stroke="#9a7850" stroke-width="2.5" transform="rotate(-1,266,290)"/>
-  <ellipse cx="269" cy="530" rx="5" ry="7.5" fill="none" stroke="#9a7850" stroke-width="2.2" transform="rotate(2,269,530)"/>
-  <ellipse cx="267" cy="720" rx="4.5" ry="7" fill="none" stroke="#9a7850" stroke-width="2" transform="rotate(-2,267,720)"/>
-
-  <!-- corda 5 — grossa -->
-  <path d="M340,136 C342,240 338,380 345,560 C350,700 346,820 340,900" fill="none" stroke="#c9b898" stroke-width="4" stroke-linecap="round"/>
-  <path d="M340,136 C342,240 338,380 345,560 C350,700 346,820 340,900" fill="none" stroke="#7a5c42" stroke-width="1.4" stroke-dasharray="5 6" stroke-linecap="round" opacity=".55"/>
-  <ellipse cx="341" cy="260" rx="6" ry="9" fill="none" stroke="#a08060" stroke-width="2.8" transform="rotate(-2,341,260)"/>
-  <ellipse cx="344" cy="460" rx="5.5" ry="8" fill="none" stroke="#a08060" stroke-width="2.4" transform="rotate(2,344,460)"/>
-  <ellipse cx="343" cy="680" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(-1,343,680)"/>
-
-  <!-- corda 6 -->
-  <path d="M415,139 C413,210 417,300 410,420" fill="none" stroke="#d4c4a0" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M415,139 C413,210 417,300 410,420" fill="none" stroke="#7a5c42" stroke-width="1" stroke-dasharray="4 7" stroke-linecap="round" opacity=".4"/>
-  <ellipse cx="413" cy="310" rx="4.5" ry="6.5" fill="none" stroke="#9a7850" stroke-width="2" transform="rotate(3,413,310)"/>
-
-  <!-- corda 7 -->
-  <path d="M490,137 C492,230 488,370 495,540 C500,680 496,800 490,900" fill="none" stroke="#c0ae88" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M490,137 C492,230 488,370 495,540 C500,680 496,800 490,900" fill="none" stroke="#6b4e30" stroke-width="1.1" stroke-dasharray="5 7" stroke-linecap="round" opacity=".48"/>
-  <ellipse cx="491" cy="280" rx="5" ry="7.5" fill="none" stroke="#a08060" stroke-width="2.3" transform="rotate(-2,491,280)"/>
-  <ellipse cx="494" cy="550" rx="5" ry="7.5" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(2,494,550)"/>
-
-  <!-- corda 8 — curta e grossa -->
-  <path d="M570,140 C568,220 572,320 565,440" fill="none" stroke="#b8a880" stroke-width="3.8" stroke-linecap="round"/>
-  <path d="M570,140 C568,220 572,320 565,440" fill="none" stroke="#7a5c42" stroke-width="1.3" stroke-dasharray="4 6" stroke-linecap="round" opacity=".5"/>
-  <ellipse cx="568" cy="230" rx="6" ry="8.5" fill="none" stroke="#9a7850" stroke-width="2.6" transform="rotate(-3,568,230)"/>
-  <ellipse cx="566" cy="390" rx="5.5" ry="8" fill="none" stroke="#9a7850" stroke-width="2.4" transform="rotate(2,566,390)"/>
-
-  <!-- corda 9 -->
-  <path d="M645,138 C647,250 643,400 650,590 C655,740 651,850 645,900" fill="none" stroke="#c9b898" stroke-width="3" stroke-linecap="round"/>
-  <path d="M645,138 C647,250 643,400 650,590 C655,740 651,850 645,900" fill="none" stroke="#7a5c42" stroke-width="1" stroke-dasharray="5 7.5" stroke-linecap="round" opacity=".45"/>
-  <ellipse cx="646" cy="340" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(-1,646,340)"/>
-  <ellipse cx="649" cy="600" rx="4.5" ry="7" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(3,649,600)"/>
-
-  <!-- corda 10 -->
-  <path d="M720,136 C718,200 722,290 715,400" fill="none" stroke="#d4c4a0" stroke-width="2.4" stroke-linecap="round"/>
-  <path d="M720,136 C718,200 722,290 715,400" fill="none" stroke="#6b4e30" stroke-width=".9" stroke-dasharray="4 8" stroke-linecap="round" opacity=".4"/>
-  <ellipse cx="718" cy="300" rx="4" ry="6" fill="none" stroke="#9a7850" stroke-width="1.9" transform="rotate(2,718,300)"/>
-
-  <!-- corda 11 — muito longa -->
-  <path d="M800,139 C802,260 798,420 805,620 C810,780 806,870 800,900" fill="none" stroke="#c0ae88" stroke-width="3.6" stroke-linecap="round"/>
-  <path d="M800,139 C802,260 798,420 805,620 C810,780 806,870 800,900" fill="none" stroke="#7a5c42" stroke-width="1.3" stroke-dasharray="5 6.5" stroke-linecap="round" opacity=".52"/>
-  <ellipse cx="801" cy="310" rx="5.5" ry="8" fill="none" stroke="#a08060" stroke-width="2.5" transform="rotate(-2,801,310)"/>
-  <ellipse cx="804" cy="500" rx="5" ry="7.5" fill="none" stroke="#a08060" stroke-width="2.3" transform="rotate(2,804,500)"/>
-  <ellipse cx="803" cy="750" rx="4.5" ry="7" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(-1,803,750)"/>
-
-  <!-- corda 12 -->
-  <path d="M880,137 C878,220 882,330 875,480" fill="none" stroke="#b8a880" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M880,137 C878,220 882,330 875,480" fill="none" stroke="#6b4e30" stroke-width="1" stroke-dasharray="4.5 7" stroke-linecap="round" opacity=".44"/>
-  <ellipse cx="878" cy="260" rx="4.5" ry="7" fill="none" stroke="#9a7850" stroke-width="2" transform="rotate(3,878,260)"/>
-  <ellipse cx="876" cy="450" rx="4" ry="6.5" fill="none" stroke="#9a7850" stroke-width="1.9" transform="rotate(-2,876,450)"/>
-
-  <!-- corda 13 -->
-  <path d="M960,140 C962,250 958,410 965,600 C970,750 966,860 960,900" fill="none" stroke="#c9b898" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M960,140 C962,250 958,410 965,600 C970,750 966,860 960,900" fill="none" stroke="#7a5c42" stroke-width="1.1" stroke-dasharray="5 7" stroke-linecap="round" opacity=".47"/>
-  <ellipse cx="961" cy="350" rx="5" ry="7.5" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(-2,961,350)"/>
-  <ellipse cx="964" cy="610" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(2,964,610)"/>
-
-  <!-- corda 14 — curta -->
-  <path d="M1040,138 C1038,210 1042,300 1035,390" fill="none" stroke="#d0c098" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M1040,138 C1038,210 1042,300 1035,390" fill="none" stroke="#6b4e30" stroke-width=".9" stroke-dasharray="4 8" stroke-linecap="round" opacity=".4"/>
-  <ellipse cx="1038" cy="280" rx="4.5" ry="6.5" fill="none" stroke="#9a7850" stroke-width="2" transform="rotate(3,1038,280)"/>
-
-  <!-- corda 15 -->
-  <path d="M1120,139 C1122,240 1118,380 1125,560 C1130,700 1126,820 1120,900" fill="none" stroke="#c0ae88" stroke-width="3.4" stroke-linecap="round"/>
-  <path d="M1120,139 C1122,240 1118,380 1125,560 C1130,700 1126,820 1120,900" fill="none" stroke="#7a5c42" stroke-width="1.2" stroke-dasharray="5 6" stroke-linecap="round" opacity=".5"/>
-  <ellipse cx="1121" cy="290" rx="5.5" ry="8" fill="none" stroke="#a08060" stroke-width="2.4" transform="rotate(-1,1121,290)"/>
-  <ellipse cx="1124" cy="570" rx="5" ry="7.5" fill="none" stroke="#a08060" stroke-width="2.2" transform="rotate(2,1124,570)"/>
-  <ellipse cx="1122" cy="780" rx="4.5" ry="7" fill="none" stroke="#a08060" stroke-width="2" transform="rotate(-2,1122,780)"/>
-
-  <!-- corda 16 — muito grossa, longa -->
-  <path d="M1200,136 C1202,260 1198,430 1205,640 C1210,800 1206,880 1200,900" fill="none" stroke="#b8a880" stroke-width="4.2" stroke-linecap="round"/>
-  <path d="M1200,136 C1202,260 1198,430 1205,640 C1210,800 1206,880 1200,900" fill="none" stroke="#6b4e30" stroke-width="1.5" stroke-dasharray="5 6" stroke-linecap="round" opacity=".55"/>
-  <ellipse cx="1201" cy="320" rx="6.5" ry="9" fill="none" stroke="#9a7850" stroke-width="2.8" transform="rotate(-2,1201,320)"/>
-  <ellipse cx="1204" cy="550" rx="6" ry="8.5" fill="none" stroke="#9a7850" stroke-width="2.5" transform="rotate(2,1204,550)"/>
-  <ellipse cx="1202" cy="810" rx="5" ry="7.5" fill="none" stroke="#9a7850" stroke-width="2.2" transform="rotate(-1,1202,810)"/>
-
-  <!-- corda 17 -->
-  <path d="M1290,138 C1288,220 1292,340 1285,500" fill="none" stroke="#c9b898" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M1290,138 C1288,220 1292,340 1285,500" fill="none" stroke="#7a5c42" stroke-width="1" stroke-dasharray="4.5 7" stroke-linecap="round" opacity=".44"/>
-  <ellipse cx="1288" cy="260" rx="5" ry="7" fill="none" stroke="#a08060" stroke-width="2.1" transform="rotate(3,1288,260)"/>
-  <ellipse cx="1286" cy="460" rx="4.5" ry="6.5" fill="none" stroke="#a08060" stroke-width="1.9" transform="rotate(-2,1286,460)"/>
-
-  <!-- corda 18 -->
-  <path d="M1370,140 C1372,250 1368,400 1375,580 C1380,720 1376,840 1375,900" fill="none" stroke="#d0c098" stroke-width="3" stroke-linecap="round"/>
-  <path d="M1370,140 C1372,250 1368,400 1375,580 C1380,720 1376,840 1375,900" fill="none" stroke="#6b4e30" stroke-width="1.1" stroke-dasharray="5 7" stroke-linecap="round" opacity=".46"/>
-  <ellipse cx="1371" cy="330" rx="5" ry="7.5" fill="none" stroke="#9a7850" stroke-width="2.2" transform="rotate(-1,1371,330)"/>
-  <ellipse cx="1374" cy="590" rx="4.5" ry="7" fill="none" stroke="#9a7850" stroke-width="2" transform="rotate(2,1374,590)"/>
-</svg>
   <h1>Etnografia de um Centro de<br>Inteligência Artificial:<br>seguindo cientistas e engenheiros<br>universidade afora</h1>
   <div class="sub">Juliane Cristina Helanski Cardoso &nbsp;·&nbsp; UNICAMP &nbsp;·&nbsp; 2026</div>
   <div class="epigrafe">Caminante, son tus huellas<br>el camino y nada más;<br>Caminante, no hay camino,<br>se hace camino al andar.<br>Al andar se hace el camino,<br>y al volver la vista atrás<br>se ve la senda que nunca<br>se ha de volver a pisar.<br>Caminante no hay camino<br>sino estelas en la mar.</div>
