@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:wght@200;300;400&family=IBM+Plex+Mono:wght@300;400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'IBM Plex Mono',monospace;color:#2a2a28}
+body::before{content:'seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · seguindo cientistas e engenheiros · ';position:fixed;inset:0;z-index:0;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.03em;line-height:1.9;color:#1a1a18;opacity:.055;word-break:break-all;padding:1rem;pointer-events:none}
 #intro{position:fixed;inset:0;z-index:100;background:#ffffff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 1.2s ease;overflow:hidden}
 #intro-khipu{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 #intro.out{opacity:0;pointer-events:none}
@@ -52,7 +53,7 @@ body{background:#ffffff;overflow:hidden;width:100vw;height:100vh;font-family:'IB
 #lightbox-close{position:fixed;top:1.2rem;right:1.5rem;background:none;border:none;color:#3a3a38;font-size:.7rem;font-family:'IBM Plex Mono',monospace;cursor:pointer;letter-spacing:.1em}
 .fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:1rem 0}
 .fig-grid.single{grid-template-columns:1fr}
-.fig-thumb{width:100%;height:120px;object-fit:cover;cursor:zoom-in;border:1px solid #e8e6e0;transition:opacity .2s;display:block}
+.fig-thumb{width:100%;height:72px;object-fit:cover;cursor:zoom-in;border:1px solid #e8e6e0;transition:opacity .2s;display:block}
 .fig-thumb:hover{opacity:.8;border-color:#bbb}
 .fig-label{font-size:.52rem;color:#777;letter-spacing:.08em;text-align:center;margin-bottom:.5rem}
 .ext-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;color:#5a5a58;border:1px solid #e0deda;padding:.25rem .6rem;text-decoration:none;letter-spacing:.08em;margin:.3rem 0;transition:border-color .2s}
@@ -276,20 +277,8 @@ const links=[
 const W=window.innerWidth, H=window.innerHeight;
 const svg=d3.select("#graph-svg");
 
-// ── defs: background text pattern + rope filter ──────────────────────────────
+// ── defs ──────────────────────────────────────────────────────────────────────
 const defs=svg.append("defs");
-
-// Fundo: texto repetido da contracapa da Haraway
-const bgPat=defs.append("pattern").attr("id","bg-text")
-  .attr("x",0).attr("y",0).attr("width",520).attr("height",20)
-  .attr("patternUnits","userSpaceOnUse");
-bgPat.append("text").attr("x",0).attr("y",14)
-  .attr("font-family","IBM Plex Mono,monospace").attr("font-size","9.5")
-  .attr("fill","#1a1a18").attr("fill-opacity","0.055").attr("letter-spacing","0.5")
-  .text("seguindo cientistas e engenheiros  ");
-svg.append("rect").attr("width","100%").attr("height","100%").attr("fill","url(#bg-text)");
-
-// Filtro suave para textura de papel
 const filt=defs.append("filter").attr("id","paper").attr("x","-10%").attr("y","-10%").attr("width","120%").attr("height","120%");
 filt.append("feTurbulence").attr("type","fractalNoise").attr("baseFrequency","0.9").attr("numOctaves","4").attr("result","noise");
 filt.append("feDisplacementMap").attr("in","SourceGraphic").attr("in2","noise").attr("scale","0.8").attr("xChannelSelector","R").attr("yChannelSelector","G");
