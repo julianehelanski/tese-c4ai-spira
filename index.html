@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etnografia de um centro de IA: seguindo cientistas e engenheiros universidade afora</title>
+<title>Etnografia de um Centro de Inteligência Artificial: seguindo cientistas e engenheiros universidade afora</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:wght@200;300;400&family=IBM+Plex+Mono:wght@300;400&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fafaf8;overflow:hidden;width:100vw;height:100vh;font-family:'IBM Plex Mono',monospace;color:#2a2a28}
 #intro{position:fixed;inset:0;z-index:100;background:#fafaf8;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:opacity 1.2s ease}
 #intro.out{opacity:0;pointer-events:none}
-#intro h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.2rem,2.8vw,2rem);text-align:center;line-height:1.8;max-width:580px;padding:0 2rem;color:#1a1a18;opacity:0;animation:rise 1.5s ease .5s forwards}
+#intro h1{font-family:'DM Sans',sans-serif;font-style:normal;font-weight:200;font-size:clamp(1.1rem,2.5vw,1.8rem);text-align:center;line-height:1.6;max-width:580px;padding:0 2rem;color:#1a1a18;letter-spacing:-.01em;opacity:0;animation:rise 1.5s ease .5s forwards}
 #intro .sub{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:#b0aea8;margin-top:1.5rem;opacity:0;animation:rise 1.5s ease 1.5s forwards}
 #intro .epigrafe{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(.65rem,1.05vw,.78rem);line-height:2;color:#b8b6b0;text-align:right;max-width:320px;margin-top:2.8rem;opacity:0;animation:rise 1.5s ease 2.4s forwards}
-#intro .epigrafe-attr{font-family:'IBM Plex Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:#c8c6c0;text-align:right;max-width:320px;margin-top:.5rem;opacity:0;animation:rise 1.5s ease 3s forwards}
+#intro .epigrafe-attr{font-family:'DM Sans',monospace;font-size:.5rem;font-weight:300;letter-spacing:.1em;color:#c8c6c0;text-align:right;max-width:320px;margin-top:.5rem;opacity:0;animation:rise 1.5s ease 3s forwards}
 #intro .hint{position:absolute;bottom:2.5rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:#c0beb8;opacity:0;animation:rise 1s ease 4.2s forwards,pulse 2.5s ease 4.2s infinite}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
 #graph-svg{position:fixed;inset:0;width:100%;height:100%}
 #title-bar{position:fixed;top:1.5rem;left:1.5rem;z-index:5;pointer-events:none}
-#title-bar h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:.78rem;color:#aaa8a2;line-height:1.6}
+#title-bar h2{font-family:'DM Sans',sans-serif;font-style:normal;font-weight:200;font-size:.72rem;color:#aaa8a2;line-height:1.7;letter-spacing:-.01em}
 #title-bar p{font-size:.55rem;color:#c0beb8;letter-spacing:.12em;text-transform:uppercase;margin-top:.3rem}
 #panel{position:fixed;top:0;right:-43%;width:42%;height:100vh;background:rgba(250,250,248,.98);border-left:1px solid #e0deda;z-index:50;transition:right .5s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:3rem 2.2rem 3rem}
 #panel.open{right:0}
 #pcl{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;color:#c0beb8;font-family:'IBM Plex Mono',monospace;font-size:.7rem;cursor:pointer;letter-spacing:.1em}
 #pcl:hover{color:#666}
 #pbadge{font-size:.54rem;letter-spacing:.25em;text-transform:uppercase;border:1px solid #e0deda;display:inline-block;padding:.2rem .55rem;margin-bottom:1.2rem}
-#ptitle{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.5rem;line-height:1.4;margin-bottom:1.4rem;color:#1a1a18}
+#ptitle{font-family:'DM Sans',sans-serif;font-weight:200;font-style:normal;font-size:1.35rem;line-height:1.35;margin-bottom:1.4rem;color:#1a1a18;letter-spacing:-.01em}
 #pbody{font-size:.68rem;line-height:1.95;color:#555}
 #pbody p{margin-bottom:1rem}
 #pbody blockquote{border-left:1px solid #d8d6d0;padding-left:.9rem;color:#888;font-style:italic;margin:1.2rem 0}
@@ -39,7 +39,8 @@ body{background:#fafaf8;overflow:hidden;width:100vw;height:100vh;font-family:'IB
 .li{display:flex;align-items:center;gap:.4rem;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#b8b6b0;margin-bottom:.32rem}
 .ld{width:9px;height:9px;border-radius:50%;border:1.5px solid;flex-shrink:0;position:relative;background:transparent}
 .ld::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#faf9f6}
-#tip{position:fixed;background:rgba(250,250,248,.95);border:1px solid #e0deda;color:#666;font-size:.58rem;padding:.3rem .6rem;pointer-events:none;z-index:60;display:none;letter-spacing:.05em;font-family:'IBM Plex Mono',monospace}
+#novelo{position:fixed;bottom:1.4rem;right:1.6rem;z-index:5;opacity:.55;pointer-events:none}
+#novelo:hover{opacity:.8}border:1px solid #e0deda;color:#666;font-size:.58rem;padding:.3rem .6rem;pointer-events:none;z-index:60;display:none;letter-spacing:.05em;font-family:'IBM Plex Mono',monospace}
 #lightbox{position:fixed;inset:0;z-index:200;background:rgba(10,10,8,.92);display:none;align-items:center;justify-content:center;cursor:zoom-out}
 #lightbox.open{display:flex}
 #lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border:1px solid #222}
@@ -61,14 +62,14 @@ body{background:#fafaf8;overflow:hidden;width:100vw;height:100vh;font-family:'IB
   <div id="lightbox-caption"></div>
 </div>
 <div id="intro">
-  <h1>Etnografia de um centro de IA:<br>seguindo cientistas e engenheiros<br>universidade afora</h1>
+  <h1>Etnografia de um Centro de<br>Inteligência Artificial:<br>seguindo cientistas e engenheiros<br>universidade afora</h1>
   <div class="sub">Juliane Cristina Helanski Cardoso &nbsp;·&nbsp; UNICAMP &nbsp;·&nbsp; 2026</div>
   <div class="epigrafe">Caminante, son tus huellas<br>el camino y nada más;<br>Caminante, no hay camino,<br>se hace camino al andar.<br>Al andar se hace el camino,<br>y al volver la vista atrás<br>se ve la senda que nunca<br>se ha de volver a pisar.<br>Caminante no hay camino<br>sino estelas en la mar.</div>
   <div class="epigrafe-attr">Antonio Machado, Proverbios y cantares XXIX</div>
   <div class="hint">clique para entrar na rede</div>
 </div>
 <div id="title-bar">
-  <h2>Etnografia de um centro de IA:<br>seguindo cientistas e engenheiros universidade afora</h2>
+  <h2>Etnografia de um Centro de Inteligência Artificial:<br>seguindo cientistas e engenheiros universidade afora</h2>
   <p>Juliane Cristina Helanski Cardoso &nbsp;·&nbsp; UNICAMP · 2026</p>
 </div>
 <svg id="graph-svg"></svg>
@@ -86,12 +87,30 @@ body{background:#fafaf8;overflow:hidden;width:100vw;height:100vh;font-family:'IB
   <div class="li"><div class="ld" style="border-color:#8a8a30"></div>conceito</div>
   <div class="li"><div class="ld" style="border-color:#a03868"></div>mídia · simpósio</div>
 </div>
+<svg id="novelo" width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <!-- sombra suave -->
+  <ellipse cx="38" cy="63" rx="16" ry="4" fill="#b0a898" opacity=".18"/>
+  <!-- corpo do novelo -->
+  <circle cx="36" cy="36" r="26" fill="#e8dece" stroke="#c9b89a" stroke-width="1"/>
+  <!-- fios enrolados: camada de baixo (cru claro) -->
+  <path d="M14,28 Q22,12 42,16 Q58,20 56,36 Q54,52 40,58 Q24,64 16,50 Q10,38 14,28" fill="none" stroke="#d4c4a8" stroke-width="2.8" stroke-linecap="round" opacity=".7"/>
+  <path d="M18,22 Q30,8 50,18 Q64,28 58,46 Q52,60 36,62 Q18,64 12,46 Q8,32 18,22" fill="none" stroke="#d4c4a8" stroke-width="2.2" stroke-linecap="round" opacity=".5"/>
+  <!-- fios escuros (torção) -->
+  <path d="M14,28 Q22,12 42,16 Q58,20 56,36 Q54,52 40,58 Q24,64 16,50 Q10,38 14,28" fill="none" stroke="#7a5c42" stroke-width="1.1" stroke-dasharray="4 6.5" stroke-linecap="round" opacity=".55"/>
+  <path d="M22,16 Q38,6 54,22 Q66,36 56,52 Q46,66 28,62 Q10,56 10,38 Q10,26 22,16" fill="none" stroke="#7a5c42" stroke-width="1.0" stroke-dasharray="3.5 8" stroke-linecap="round" opacity=".4"/>
+  <!-- segundo conjunto de espirais -->
+  <path d="M36,10 Q54,14 60,32 Q64,50 46,60 Q28,68 16,54 Q6,40 14,24 Q22,10 36,10" fill="none" stroke="#c9b89a" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+  <path d="M36,10 Q54,14 60,32 Q64,50 46,60 Q28,68 16,54 Q6,40 14,24 Q22,10 36,10" fill="none" stroke="#7a5c42" stroke-width=".9" stroke-dasharray="5 7" stroke-linecap="round" opacity=".38"/>
+  <!-- linha saindo do novelo (ponta solta) -->
+  <path d="M58,30 Q66,24 70,18 Q72,14 68,10" fill="none" stroke="#e2d9c8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M58,30 Q66,24 70,18 Q72,14 68,10" fill="none" stroke="#6b5240" stroke-width="1.2" stroke-dasharray="4 6" stroke-linecap="round" opacity=".6"/>
+</svg>
 <div id="tip"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script>
 const C={chapter:"#3a8fa8",person:"#a06832",institution:"#6b5aaa",nonhuman:"#3a8a60",concept:"#8a8a30",media:"#a03868",historical:"#806040",core:"#1a1a18"};
 const nodes=[
-{id:"tese",label:"Tese",type:"core",size:22,title:"Etnografia de um centro de IA: seguindo cientistas e engenheiros universidade afora",badge:"Tese de doutorado · UNICAMP · Campinas 2026",content:`<p>Entre 2022 e 2025, acompanhei a construção de inteligência artificial no Centro de Inteligência Artificial da Universidade de São Paulo (C4AI), estabelecido em 2020 mediante parceria de co-financiamento entre a USP, a FAPESP e a IBM.</p><p>O que começou como pergunta simples — <em>onde está o laboratório de IA?</em> — transformou-se em documentação do ciclo completo de uma parceria público-privada: da fundação (2020) à dissolução (2025).</p><p>A tese mobiliza a Teoria Ator-Rede de Bruno Latour como orientação teórico-metodológica, articulada com contribuições de John Law, Marilyn Strathern, Annemarie Mol e Isabelle Stengers.</p><p>Autora: Juliane Cristina Helanski Cardoso. UNICAMP, Campinas, 2026.</p><div class="tags"><span class="tag">C4AI</span><span class="tag">IBM</span><span class="tag">USP</span><span class="tag">UNICAMP</span><span class="tag">TAR</span><span class="tag">STS</span><span class="tag">etnografia</span></div>`},
+{id:"tese",label:"Tese",type:"core",size:22,title:"Etnografia de um Centro de Inteligência Artificial: seguindo cientistas e engenheiros universidade afora",badge:"Tese de doutorado · UNICAMP · Campinas 2026",content:`<p>Entre 2022 e 2025, acompanhei a construção de inteligência artificial no Centro de Inteligência Artificial da Universidade de São Paulo (C4AI), estabelecido em 2020 mediante parceria de co-financiamento entre a USP, a FAPESP e a IBM.</p><p>O que começou como pergunta simples — <em>onde está o laboratório de IA?</em> — transformou-se em documentação do ciclo completo de uma parceria público-privada: da fundação (2020) à dissolução (2025).</p><p>A tese mobiliza a Teoria Ator-Rede de Bruno Latour como orientação teórico-metodológica, articulada com contribuições de John Law, Marilyn Strathern, Annemarie Mol e Isabelle Stengers.</p><p>Autora: Juliane Cristina Helanski Cardoso. UNICAMP, Campinas, 2026.</p><div class="tags"><span class="tag">C4AI</span><span class="tag">IBM</span><span class="tag">USP</span><span class="tag">UNICAMP</span><span class="tag">TAR</span><span class="tag">STS</span><span class="tag">etnografia</span></div>`},
 {id:"cap1",label:"Apresentação",type:"chapter",size:13,title:"Apresentação",badge:"Capítulo 1",content:`<p>Março de 2022. Estou no InovaUSP, em São Paulo, para minha primeira visita ao C4AI. A inteligência artificial não fazia parte de meu projeto inicial de pesquisa.</p><p>Ao me aproximar da sala dos pesquisadores, notei sua configuração peculiar: a porta estava fechada, mas uma parede inteira de vidro expunha todo o interior. Fileiras de computadores, ninguém presente.</p><p>Perguntei se uma sala com GPUs era o laboratório do Centro. João disse que não — era como se fosse a área de TI. A situação transformou-se em problema de pesquisa: <em>onde está o laboratório de IA e onde estão os seus cientistas?</em></p><div class="tags"><span class="tag">InovaUSP</span><span class="tag">laboratório distribuído</span><span class="tag">origem etnográfica</span></div>`},
 {id:"cap2",label:"Enquadramento\nteórico",type:"chapter",size:13,title:"Enquadramento teórico",badge:"Capítulo 2",content:`<p>O capítulo desenvolve o quadro teórico-metodológico mobilizado na tese: a Teoria Ator-Rede como orientação principal, articulada com contribuições sobre mediação técnica, agência distribuída e multiplicidade ontológica.</p><p>Discute a colaboração com IA generativa (Claude) na escrita da tese como experimentação metodológica deliberada — <em>fazer parentesco com um parente estranho</em> — seguindo a proposta de Haraway de ficar com o problema.</p><div class="tags"><span class="tag">TAR</span><span class="tag">Latour</span><span class="tag">Mol</span><span class="tag">IA generativa</span><span class="tag">método</span></div>`},
 {id:"cap3",label:"A rede que\nFábio e Cláudio\nconstruíram",type:"chapter",size:17,title:"A rede que Fábio e Cláudio construíram",badge:"Capítulo 3",content:`<p>Fevereiro de 2023. Na Bluetalks no Inovabra Habitat, assisti a uma troca reveladora entre a audiência e Cláudio sobre os ganhos da IBM com a parceria.</p><blockquote>A IBM se beneficia ao incentivar um ecossistema de inovação em IA [...] para que as pesquisas atendam às necessidades do setor; assim, surgiria uma demanda por serviços que a IBM poderia fornecer. — Cláudio Pinhanez</blockquote><p>Esse deslocamento metodológico me levou da etnografia do presente a uma investigação histórica que conecta o C4AI a práticas tecnocientíficas da IBM ao longo de mais de um século — até o sistema de tabulação de Herman Hollerith em 1890.</p><p>Esta pesquisa documentou quase acidentalmente o ciclo institucional completo: nascimento (2020), consolidação (2021–2022), multiplicação institucional (incubação de 8 centros, 2022–2024) e dissolução (2025).</p><div class="tags"><span class="tag">Bluetalks</span><span class="tag">IBM</span><span class="tag">tecnopoder</span><span class="tag">translação</span><span class="tag">genealogia</span></div>`},
@@ -161,8 +180,8 @@ const bgPat=defs.append("pattern").attr("id","bg-text")
   .attr("patternUnits","userSpaceOnUse");
 bgPat.append("text").attr("x",0).attr("y",14)
   .attr("font-family","IBM Plex Mono,monospace").attr("font-size","9.5")
-  .attr("fill","#1a1a18").attr("fill-opacity","0.032").attr("letter-spacing","0.5")
-  .text("ficar com o problema: fazer parentes no Chthuluceno  Donna J. Haraway  ");
+  .attr("fill","#1a1a18").attr("fill-opacity","0.018").attr("letter-spacing","0.5")
+  .text("seguindo cientistas e engenheiros  ");
 svg.append("rect").attr("width","100%").attr("height","100%").attr("fill","url(#bg-text)");
 
 // Filtro suave para textura de papel
@@ -232,8 +251,9 @@ node.each(function(d){
   const txt=el.append("text")
     .attr("text-anchor","middle")
     .attr("fill",C[d.type])
-    .attr("fill-opacity",.82)
-    .attr("font-size",d.size>14?"7.5px":"6.5px")
+    .attr("fill-opacity",.95)
+    .attr("font-size",d.size>14?"8px":"7px")
+    .attr("font-weight","600")
     .attr("font-family","IBM Plex Mono,monospace")
     .attr("pointer-events","none");
   if(lines.length===1){txt.attr("dominant-baseline","central").text(d.label)}
