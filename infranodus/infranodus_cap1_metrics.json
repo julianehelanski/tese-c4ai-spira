@@ -50,11 +50,11 @@
       "degree": 390
     },
     {
-      "term": "campo",
+      "term": "artificial",
       "degree": 380
     },
     {
-      "term": "artificial",
+      "term": "campo",
       "degree": 380
     },
     {
@@ -141,7 +141,7 @@
     },
     {
       "term": "claude",
-      "betweenness": 0.18206641139915886
+      "betweenness": 0.18206641139915883
     },
     {
       "term": "rede",
@@ -153,7 +153,7 @@
     },
     {
       "term": "objeto",
-      "betweenness": 0.09532253677316761
+      "betweenness": 0.0953225367731676
     },
     {
       "term": "modelo",
@@ -173,7 +173,7 @@
     },
     {
       "term": "latour",
-      "betweenness": 0.04936392358713618
+      "betweenness": 0.049363923587136184
     },
     {
       "term": "etnografia",
@@ -215,7 +215,7 @@
   "communities": [
     {
       "id": 0,
-      "size": 37,
+      "size": 42,
       "label": [
         "claude",
         "pesquisador",
@@ -235,8 +235,10 @@
         "composicao",
         "condicao",
         "constitui",
+        "conteudo",
         "diferentes",
         "efeitos",
+        "epistemica",
         "escrita",
         "existe",
         "linguagem",
@@ -249,84 +251,38 @@
         "nenhum",
         "objeto",
         "ontologia",
+        "opera",
         "parte",
+        "percurso",
         "pesquisador",
         "pontos",
+        "precisamente",
         "processo",
         "produz",
         "produzem",
         "referencias",
         "relacao",
-        "relacoes",
         "resultados",
+        "revelou",
         "serem",
         "sistema",
         "tecnicos",
         "termos",
-        "visiveis"
+        "versoes"
       ]
     },
     {
       "id": 1,
-      "size": 33,
-      "label": [
-        "ciencia",
-        "sociais",
-        "dado",
-        "cientista",
-        "laboratorio",
-        "social",
-        "instituicao",
-        "torna"
-      ],
-      "members": [
-        "aliancas",
-        "analise",
-        "ausencia",
-        "ciencia",
-        "cientifico",
-        "cientista",
-        "computacao",
-        "computacional",
-        "corporacao",
-        "dado",
-        "decisao",
-        "distintas",
-        "entrevistas",
-        "estatistica",
-        "ideia",
-        "infraestrutura",
-        "instituicao",
-        "interlocutores",
-        "laboratorio",
-        "negociacoes",
-        "observacao",
-        "politica",
-        "politicas",
-        "presenca",
-        "presente",
-        "recursos",
-        "significa",
-        "sociais",
-        "social",
-        "tecnologia",
-        "teria",
-        "torna",
-        "treinamento"
-      ]
-    },
-    {
-      "id": 2,
-      "size": 33,
+      "size": 41,
       "label": [
         "rede",
         "latour",
         "agencia",
         "ator",
+        "diagrama",
         "distribuida",
         "associacao",
-        "teoria",
-        "opera"
+        "teoria"
       ],
       "members": [
         "acao",
@@ -338,78 +294,144 @@
         "categorias",
         "compreender",
         "conceito",
-        "conceituais",
         "constituem",
-        "conteudo",
+        "conversa",
+        "corte",
         "cortes",
         "descreve",
+        "diagrama",
         "distribuida",
-        "epistemica",
         "faire",
         "formulacoes",
         "inscricao",
         "instrumentos",
         "latour",
-        "opera",
+        "operacao",
+        "operam",
         "pensamento",
         "pessoas",
         "ponto",
+        "presente",
         "propoe",
         "rede",
+        "registro",
+        "relacoes",
         "responsabilidade",
         "sistemas",
-        "tecnociencia",
+        "temporal",
         "teoria",
         "teorico",
-        "versoes"
+        "torna",
+        "tornava",
+        "tornou",
+        "visiveis",
+        "visivel"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 37,
+      "label": [
+        "ciencia",
+        "campo",
+        "sociais",
+        "dado",
+        "conhecimento",
+        "cientista",
+        "laboratorio",
+        "social"
+      ],
+      "members": [
+        "aliancas",
+        "analise",
+        "ausencia",
+        "campo",
+        "ciencia",
+        "cientifico",
+        "cientista",
+        "computacao",
+        "computacional",
+        "conhecimento",
+        "corporacao",
+        "dado",
+        "decisao",
+        "distintas",
+        "entrevistas",
+        "estatistica",
+        "familiaridade",
+        "ideia",
+        "infraestrutura",
+        "instituicao",
+        "interlocutores",
+        "laboratorio",
+        "negociacoes",
+        "notas",
+        "observacao",
+        "permitiu",
+        "politica",
+        "politicas",
+        "presenca",
+        "producao",
+        "recursos",
+        "significa",
+        "sociais",
+        "social",
+        "tecnologia",
+        "teria",
+        "treinamento"
       ]
     },
     {
       "id": 3,
-      "size": 27,
+      "size": 32,
       "label": [
         "pesquisa",
+        "inteligencia",
+        "artificial",
         "etnografia",
         "construcao",
+        "tecnico",
         "pratica",
-        "centro",
-        "vocabulario",
-        "pergunta",
-        "revelou"
+        "letramento"
       ],
       "members": [
         "acesso",
+        "artificial",
         "centro",
         "condicoes",
         "construcao",
-        "corte",
-        "descricao",
+        "descrever",
         "etnografia",
         "experiencia",
+        "fato",
+        "ferramentas",
+        "generativa",
+        "inteligencia",
+        "letramento",
         "licao",
         "marcelo",
         "mediacoes",
-        "operacao",
         "parentesco",
-        "percurso",
         "pergunta",
         "pesquisa",
         "possibilidade",
         "pratica",
+        "problema",
         "problemas",
+        "projeto",
         "projetos",
         "questao",
         "resposta",
-        "revelou",
+        "spira",
         "tecnicas",
-        "temporal",
-        "trata",
-        "vocabulario"
+        "tecnico",
+        "tecnociencia",
+        "trata"
       ]
     },
     {
       "id": 4,
-      "size": 22,
+      "size": 24,
       "label": [
         "humano",
         "metodo",
@@ -418,11 +440,13 @@
         "parcial",
         "existencias",
         "parciais",
-        "decisoes"
+        "vocabulario"
       ],
       "members": [
         "conceitos",
+        "conceituais",
         "decisoes",
+        "descricao",
         "entidades",
         "epistemologia",
         "escolha",
@@ -437,125 +461,81 @@
         "nocao",
         "parciais",
         "parcial",
-        "precisamente",
         "publico",
         "recusa",
         "regra",
         "simetria",
-        "simultaneamente"
+        "simultaneamente",
+        "vocabulario"
       ]
     },
     {
       "id": 5,
-      "size": 15,
+      "size": 4,
       "label": [
-        "campo",
-        "diagrama",
         "tecnica",
-        "tornou",
-        "visivel",
-        "tornava",
         "alienacao",
-        "notas"
-      ],
-      "members": [
-        "alienacao",
-        "campo",
-        "conversa",
-        "diagrama",
-        "familiaridade",
-        "notas",
-        "operam",
         "partir",
-        "permitiu",
-        "registro",
-        "simondon",
-        "tecnica",
-        "tornava",
-        "tornou",
-        "visivel"
-      ]
-    },
-    {
-      "id": 6,
-      "size": 13,
-      "label": [
-        "inteligencia",
-        "artificial",
-        "tecnico",
-        "conhecimento",
-        "letramento",
-        "generativa",
-        "spira",
-        "problema"
+        "simondon"
       ],
       "members": [
-        "artificial",
-        "conhecimento",
-        "descrever",
-        "fato",
-        "ferramentas",
-        "generativa",
-        "inteligencia",
-        "letramento",
-        "problema",
-        "producao",
-        "projeto",
-        "spira",
-        "tecnico"
+        "alienacao",
+        "partir",
+        "simondon",
+        "tecnica"
       ]
     }
   ],
   "structural_gaps": [
     {
-      "topic_a": 1,
+      "topic_a": 2,
       "topic_b": 4,
-      "edge_density": 0.2865013774104683
+      "edge_density": 0.29842342342342343
     },
     {
       "topic_a": 1,
       "topic_b": 2,
-      "edge_density": 0.34710743801652894
+      "edge_density": 0.35266974291364533
+    },
+    {
+      "topic_a": 1,
+      "topic_b": 3,
+      "edge_density": 0.36585365853658536
     },
     {
       "topic_a": 3,
       "topic_b": 4,
-      "edge_density": 0.3787878787878788
-    },
-    {
-      "topic_a": 2,
-      "topic_b": 3,
-      "edge_density": 0.41975308641975306
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 1,
-      "edge_density": 0.42342342342342343
+      "edge_density": 0.4088541666666667
     },
     {
       "topic_a": 0,
       "topic_b": 2,
-      "edge_density": 0.46846846846846846
-    },
-    {
-      "topic_a": 2,
-      "topic_b": 4,
-      "edge_density": 0.5330578512396694
-    },
-    {
-      "topic_a": 0,
-      "topic_b": 4,
-      "edge_density": 0.5712530712530712
+      "edge_density": 0.44851994851994853
     },
     {
       "topic_a": 1,
-      "topic_b": 3,
-      "edge_density": 0.5993265993265994
+      "topic_b": 4,
+      "edge_density": 0.4502032520325203
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 1,
+      "edge_density": 0.45063879210220675
+    },
+    {
+      "topic_a": 0,
+      "topic_b": 4,
+      "edge_density": 0.5654761904761905
     },
     {
       "topic_a": 0,
       "topic_b": 3,
-      "edge_density": 0.6976976976976977
+      "edge_density": 0.5944940476190477
+    },
+    {
+      "topic_a": 2,
+      "topic_b": 3,
+      "edge_density": 0.674831081081081
     }
   ]
 }

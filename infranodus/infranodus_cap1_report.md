@@ -10,7 +10,7 @@
 - Tokens significativos: **15,555**
 - Grafo bruto: **3429** nós · **24012** arestas
 - Grafo analítico (top 180 nós, peso ≥ 2, maior componente): **180** nós · **2115** arestas
-- Tópicos detectados (Louvain): **7**
+- Tópicos detectados (Louvain): **6**
 
 ## 2. Conceitos mais influentes (degree ponderado)
 | # | termo | grau ponderado |
@@ -25,8 +25,8 @@
 | 8 | `humano` | 418 |
 | 9 | `objeto` | 391 |
 | 10 | `inteligencia` | 390 |
-| 11 | `campo` | 380 |
-| 12 | `artificial` | 380 |
+| 11 | `artificial` | 380 |
+| 12 | `campo` | 380 |
 | 13 | `etnografia` | 358 |
 | 14 | `metodo` | 330 |
 | 15 | `sociais` | 304 |
@@ -71,24 +71,23 @@
 | 20 | `acao` | 0.0231 |
 
 ## 4. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (37 termos): claude, pesquisador, modelo, composicao, objeto, escrita
-- **Tópico 2** (33 termos): ciencia, sociais, dado, cientista, laboratorio, social
-- **Tópico 3** (33 termos): rede, latour, agencia, ator, distribuida, associacao
-- **Tópico 4** (27 termos): pesquisa, etnografia, construcao, pratica, centro, vocabulario
-- **Tópico 5** (22 termos): humano, metodo, existencia, maquina, parcial, existencias
-- **Tópico 6** (15 termos): campo, diagrama, tecnica, tornou, visivel, tornava
-- **Tópico 7** (13 termos): inteligencia, artificial, tecnico, conhecimento, letramento, generativa
+- **Tópico 1** (42 termos): claude, pesquisador, modelo, composicao, objeto, escrita
+- **Tópico 2** (41 termos): rede, latour, agencia, ator, diagrama, distribuida
+- **Tópico 3** (37 termos): ciencia, campo, sociais, dado, conhecimento, cientista
+- **Tópico 4** (32 termos): pesquisa, inteligencia, artificial, etnografia, construcao, tecnico
+- **Tópico 5** (24 termos): humano, metodo, existencia, maquina, parcial, existencias
+- **Tópico 6** (4 termos): tecnica, alienacao, partir, simondon
 
 ## 5. Lacunas estruturais (pares de tópicos fracamente conectados)
 Em InfraNodus, lacunas estruturais sinalizam *espaços de ideia* pouco
 articulados no texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 2** [ciencia, sociais, dado] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.2865
-- Lacuna entre **Tópico 2** [ciencia, sociais, dado] e **Tópico 3** [rede, latour, agencia] — densidade ponderada de ligação = 0.3471
-- Lacuna entre **Tópico 4** [pesquisa, etnografia, construcao] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.3788
-- Lacuna entre **Tópico 3** [rede, latour, agencia] e **Tópico 4** [pesquisa, etnografia, construcao] — densidade ponderada de ligação = 0.4198
-- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 2** [ciencia, sociais, dado] — densidade ponderada de ligação = 0.4234
-- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 3** [rede, latour, agencia] — densidade ponderada de ligação = 0.4685
+- Lacuna entre **Tópico 3** [ciencia, campo, sociais] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.2984
+- Lacuna entre **Tópico 2** [rede, latour, agencia] e **Tópico 3** [ciencia, campo, sociais] — densidade ponderada de ligação = 0.3527
+- Lacuna entre **Tópico 2** [rede, latour, agencia] e **Tópico 4** [pesquisa, inteligencia, artificial] — densidade ponderada de ligação = 0.3659
+- Lacuna entre **Tópico 4** [pesquisa, inteligencia, artificial] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.4089
+- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 3** [ciencia, campo, sociais] — densidade ponderada de ligação = 0.4485
+- Lacuna entre **Tópico 2** [rede, latour, agencia] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.4502
 
 ## 6. Leitura interpretativa
 

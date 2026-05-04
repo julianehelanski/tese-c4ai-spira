@@ -502,8 +502,8 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
     node_sizes = [80 + 700 * (deg[n] / max_deg) for n in G.nodes()]
 
     fig, ax = plt.subplots(figsize=(18, 14))
-    ax.set_facecolor("#0e1116")
-    fig.patch.set_facecolor("#0e1116")
+    ax.set_facecolor("#ffffff")
+    fig.patch.set_facecolor("#ffffff")
 
     # Edges
     weights = np.array([d["weight"] for _, _, d in G.edges(data=True)], dtype=float)
@@ -511,16 +511,16 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         ew = 0.15 + 1.6 * (weights / weights.max())
     else:
         ew = []
-    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.25, width=ew, edge_color="#9aa4b2")
+    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.35, width=ew, edge_color="#5a6470")
     nx.draw_networkx_nodes(G, pos, ax=ax, node_color=node_colors,
-                           node_size=node_sizes, linewidths=0.4, edgecolors="#e6e9ef")
+                           node_size=node_sizes, linewidths=0.4, edgecolors="#1a1d22")
 
     top_label_nodes = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(G, pos, labels=labels, font_size=9,
-                            font_color="#f5f7fa", font_weight="bold", ax=ax)
+                            font_color="#0e1116", font_weight="bold", ax=ax)
 
-    ax.set_title(title, color="#f5f7fa", fontsize=16, pad=14)
+    ax.set_title(title, color="#0e1116", fontsize=16, pad=14)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
