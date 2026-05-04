@@ -25,26 +25,29 @@ recombinável em uma única superfície plana onde inscrições heterogêneas
 passam a ser comparadas. Os centros de cálculo, segue Latour, agem à
 distância porque acumulam essas superfícies. O que ofereço aqui é um
 gesto experimental e propositadamente recursivo: tomo o texto deste
-capítulo como objeto e o submeto a uma análise de rede textual no
-estilo do \textit{InfraNodus} \parencite{paranyushkin2019infranodus},
-em que o texto é representado como grafo de co-ocorrência de termos e
-as comunidades desse grafo são lidas como tópicos latentes.\footnote{A
-análise foi conduzida com um \textit{script} em Python que reproduz a
-metodologia descrita por \textcite{paranyushkin2019infranodus}: o texto
-do capítulo, depurado dos comandos \LaTeX{} e com as notas de rodapé
-reincorporadas ao corpus, foi tokenizado em \textit{lemas} e percorrido
-por uma janela deslizante de quatro \textit{tokens}; cada par de termos
-co-ocorrentes na janela recebeu um peso decrescente com a distância
-(3, 2, 1). O grafo ponderado foi podado para os 180 termos mais
-frequentes e para arestas com peso $\geq 2$; em seguida, foram
-detectadas comunidades pelo algoritmo de Louvain ponderado e calculadas
-medidas de \textit{degree} ponderado e \textit{betweenness centrality}.
-Os artefatos da análise estão depositados em
+capítulo como objeto e o submeto a uma \textbf{análise de rede textual}
+(\textit{text network analysis}), método em que o texto é representado
+como grafo de co-ocorrência de termos e as comunidades desse grafo são
+lidas como tópicos latentes. A formulação contemporânea do método
+deriva da tradição mais ampla das \textit{redes de co-ocorrência
+lexical} \parencite{ferrercancho2001small} e da \textit{análise de
+redes semânticas} \parencite{diesner2005revealing}, e foi sistematizada
+por \textcite{paranyushkin2019infranodus} no \textit{pipeline} que aqui
+reproduzo.\footnote{A análise foi conduzida com um \textit{script} em
+Python que reproduz a metodologia descrita por
+\textcite{paranyushkin2019infranodus}: o texto do capítulo, depurado
+dos comandos \LaTeX{} e com as notas de rodapé reincorporadas ao
+corpus, foi tokenizado em \textit{lemas} e percorrido por uma janela
+deslizante de quatro \textit{tokens}; cada par de termos co-ocorrentes
+na janela recebeu um peso decrescente com a distância (3, 2, 1). O
+grafo ponderado foi podado para os 180 termos mais frequentes e para
+arestas com peso $\geq 2$; em seguida, foram detectadas comunidades
+pelo algoritmo de Louvain ponderado \parencite{blondel2008fast} e
+calculadas medidas de \textit{degree} ponderado e \textit{betweenness
+centrality}. Os artefatos da análise estão depositados em
 \texttt{infranodus/} no repositório desta tese (\texttt{.gexf} para
 \textit{Gephi}, \texttt{.png}, \texttt{.csv}, e relatório
-\texttt{.md}). Por se tratar de uma reprodução do método e não do
-\textit{software} comercial, registro o gesto como \textit{análise
-no estilo InfraNodus}.}
+\texttt{.md}).}
 
 A leitura desse grafo é, ela própria, uma operação de tradução: cada
 nó é um termo, cada aresta é uma co-ocorrência, e cada cor é uma
@@ -90,9 +93,9 @@ interpretativa precoce.}
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\textwidth,keepaspectratio]{figuras/cap.1/infranodus_cap1_focus.png}
-\caption[Rede textual do Capítulo~\ref{capitulo1} (análise no estilo InfraNodus)]{Rede
-textual do Capítulo~\ref{capitulo1} (análise no estilo
-\textit{InfraNodus}). Os nós são os 100 termos com maior
+\caption[Rede textual do Capítulo~\ref{capitulo1} (\textit{text network
+analysis})]{Rede textual do Capítulo~\ref{capitulo1}
+(\textit{text network analysis}). Os nós são os 100 termos com maior
 \textit{degree} ponderado; o tamanho do nó é proporcional ao
 \textit{degree}; a cor indica a comunidade detectada por Louvain
 ponderado; arestas com peso~$\geq 3$. Versão de alta resolução,
@@ -123,19 +126,20 @@ grafo, mas mal conectada, sinalizando uma promessa teórica que o
 capítulo abre e que os capítulos subsequentes precisam costurar à rede
 maior, sob risco de virar nota de rodapé errante.
 
-Reconheço o paradoxo do gesto. Aplicar análise de rede a um capítulo
-que invoca a teoria ator-rede é arriscar tomar a metáfora pelo método;
-e a similaridade entre os dois usos da palavra \textit{rede} é
-superficial: a rede ator-rede é uma cadeia de associações
-heterogêneas e ontologicamente plana, ao passo que a rede textual aqui
-gerada é um grafo bidimensional de co-ocorrências de \textit{tokens}
-ponderado por proximidade.\footnote{A confusão entre os dois sentidos
-de \textit{rede} é discutida por \textcite[pp.~129--132]{latour2005reassembling},
-que distingue \textit{rede} como ferramenta de inscrição e como
-diagnóstico ontológico. Mantenho a distinção: o que o
-\textit{InfraNodus} produz é uma inscrição; o que esta tese descreve
-é uma rede sociotécnica. As duas se encontram apenas no gesto de
-inscrever uma na outra.} Mas talvez seja exatamente isso que justifica
+Reconheço o paradoxo do gesto. Aplicar análise de rede textual a um
+capítulo que invoca a teoria ator-rede é arriscar tomar a metáfora
+pelo método; e a similaridade entre os dois usos da palavra
+\textit{rede} é superficial: a rede ator-rede é uma cadeia de
+associações heterogêneas e ontologicamente plana, ao passo que a rede
+textual aqui gerada é um grafo bidimensional de co-ocorrências de
+\textit{tokens} ponderado por proximidade.\footnote{A confusão entre
+os dois sentidos de \textit{rede} é discutida por
+\textcite[pp.~129--132]{latour2005reassembling}, que distingue
+\textit{rede} como ferramenta de inscrição e como diagnóstico
+ontológico. Mantenho a distinção: o que a análise de rede textual
+produz é uma inscrição; o que esta tese descreve é uma rede
+sociotécnica. As duas se encontram apenas no gesto de inscrever uma
+na outra.} Mas talvez seja exatamente isso que justifica
 o gesto: a rede textual não substitui a etnografia, ela funciona como
 mais uma inscrição que esta tese mobiliza, no mesmo registro das
 imagens, dos diagramas e do site que a acompanham. Como qualquer
@@ -147,9 +151,9 @@ com que se compromete a medir o C4AI, sabendo que medir é também
 produzir aquilo que se mede.
 
 % =====================================================================
-% Sugestão de entrada bibliográfica (caso ainda não esteja no .bib):
+% Sugestões de entradas bibliográficas (caso ainda não estejam no .bib):
 %
-% @article{paranyushkin2019infranodus,
+% @inproceedings{paranyushkin2019infranodus,
 %   author    = {Paranyushkin, Dmitry},
 %   title     = {{InfraNodus}: Generating Insight Using Text Network Analysis},
 %   booktitle = {The World Wide Web Conference (WWW '19)},
@@ -157,5 +161,40 @@ produzir aquilo que se mede.
 %   pages     = {3584--3589},
 %   publisher = {ACM},
 %   doi       = {10.1145/3308558.3314123}
+% }
+%
+% @article{ferrercancho2001small,
+%   author  = {Ferrer i Cancho, Ramon and Sol{\'e}, Ricard V.},
+%   title   = {The small world of human language},
+%   journal = {Proceedings of the Royal Society B: Biological Sciences},
+%   volume  = {268},
+%   number  = {1482},
+%   pages   = {2261--2265},
+%   year    = {2001},
+%   doi     = {10.1098/rspb.2001.1800}
+% }
+%
+% @incollection{diesner2005revealing,
+%   author    = {Diesner, Jana and Carley, Kathleen M.},
+%   title     = {Revealing Social Structure from Texts: Meta-Matrix
+%                Text Analysis as a Novel Method for Network Text Analysis},
+%   booktitle = {Causal Mapping for Information Systems and Technology Research:
+%                Approaches, Advances, and Illustrations},
+%   editor    = {Narayanan, V. K. and Armstrong, D. J.},
+%   publisher = {Idea Group Publishing},
+%   year      = {2005},
+%   pages     = {81--108}
+% }
+%
+% @article{blondel2008fast,
+%   author  = {Blondel, Vincent D. and Guillaume, Jean-Loup and
+%              Lambiotte, Renaud and Lefebvre, Etienne},
+%   title   = {Fast unfolding of communities in large networks},
+%   journal = {Journal of Statistical Mechanics: Theory and Experiment},
+%   volume  = {2008},
+%   number  = {10},
+%   pages   = {P10008},
+%   year    = {2008},
+%   doi     = {10.1088/1742-5468/2008/10/P10008}
 % }
 % =====================================================================
