@@ -528,6 +528,61 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
 
 
 # ---------------------------------------------------------------------------
+# 5b. Gephi export (GEXF + CSV)
+# ---------------------------------------------------------------------------
+
+def export_for_gephi(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
+                     btw: dict[str, float], stem: Path):
+    """Write GEXF with viz attributes (color/size by community/degree) plus
+    nodes.csv and edges.csv that Gephi imports without configuration."""
+    node2comm: dict[str, int] = {}
+    for i, c in enumerate(comms):
+        for n in c:
+            node2comm[n] = i
+
+    palette = (plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1))) * 255).astype(int)
+    max_deg = max(deg.values()) or 1
+
+    H = nx.Graph()
+    for n in G.nodes():
+        cid = node2comm.get(n, 0)
+        r, g, b = palette[cid % len(palette)][:3]
+        size = 8.0 + 60.0 * (deg[n] / max_deg)
+        H.add_node(
+            n,
+            label=n,
+            community=int(cid),
+            frequency=int(G.nodes[n].get("freq", 0)),
+            degree_weighted=float(deg[n]),
+            betweenness=float(btw.get(n, 0.0)),
+            viz={
+                "color": {"r": int(r), "g": int(g), "b": int(b), "a": 1.0},
+                "size": float(size),
+            },
+        )
+    for u, v, d in G.edges(data=True):
+        H.add_edge(u, v, weight=float(d["weight"]))
+
+    gexf_path = stem.with_suffix(".gexf")
+    nx.write_gexf(H, gexf_path)
+
+    # CSVs as a fallback (Gephi → File → Import spreadsheet)
+    nodes_csv = stem.parent / (stem.name + "_nodes.csv")
+    edges_csv = stem.parent / (stem.name + "_edges.csv")
+    with nodes_csv.open("w", encoding="utf-8") as f:
+        f.write("Id,Label,community,frequency,degree_weighted,betweenness\n")
+        for n, data in H.nodes(data=True):
+            f.write(f'{n},{n},{data["community"]},{data["frequency"]},'
+                    f'{data["degree_weighted"]:.4f},{data["betweenness"]:.6f}\n')
+    with edges_csv.open("w", encoding="utf-8") as f:
+        f.write("Source,Target,Type,Weight\n")
+        for u, v, d in H.edges(data=True):
+            f.write(f'{u},{v},Undirected,{d["weight"]:.2f}\n')
+
+    return gexf_path, nodes_csv, edges_csv
+
+
+# ---------------------------------------------------------------------------
 # 6. Main
 # ---------------------------------------------------------------------------
 
@@ -561,10 +616,18 @@ def main():
     if G_focus.number_of_nodes():
         comms_focus = detect_topics(G_focus)
         deg_focus = dict(G_focus.degree(weight="weight"))
+        btw_focus = nx.betweenness_centrality(
+            G_focus, weight=lambda u, v, d: 1.0 / d["weight"], normalized=True
+        )
         render_network(G_focus, comms_focus, deg_focus,
                        OUT / "infranodus_cap1_focus.png",
                        title="InfraNodus — Capítulo 1 · núcleo (top-100, peso ≥ 3)",
                        label_top=60)
+        export_for_gephi(G_focus, comms_focus, deg_focus, btw_focus,
+                         OUT / "infranodus_cap1_focus")
+
+    # Gephi export of the full analytic graph
+    export_for_gephi(G, comms, deg, btw, OUT / "infranodus_cap1")
 
     # --- Reports -----------------------------------------------------------
     top_terms = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:30]
@@ -643,6 +706,21 @@ descrito por Barad, e *como* a economia especulativa de promessas
 - `infranodus_cap1_network.png` — rede completa com cores por tópico.
 - `infranodus_cap1_focus.png` — núcleo (top-100 nós, peso ≥ 3).
 - `infranodus_cap1_metrics.json` — métricas brutas (degree, betweenness, comunidades).
+- `infranodus_cap1.gexf` / `infranodus_cap1_focus.gexf` — grafos prontos para Gephi
+  (cor, tamanho, comunidade, frequência, grau ponderado e betweenness embutidos).
+- `infranodus_cap1_nodes.csv` / `infranodus_cap1_edges.csv` (e `_focus_*`) —
+  fallback caso prefira importar como planilha.
+
+## 8. Como abrir no Gephi
+1. Instale Gephi (≥ 0.10): https://gephi.org/users/download/
+2. `File → Open…` → selecione `infranodus_cap1.gexf` (ou `_focus.gexf`).
+3. No painel **Appearance**: já vem com cor por `community` e tamanho por
+   `degree_weighted` (embutidos via atributos `viz`). Ajuste se quiser.
+4. Em **Layout**: aplique *ForceAtlas 2* (ative *Prevent Overlap* e
+   *Dissuade Hubs*) por ~30 s; ou *Fruchterman-Reingold* para algo mais rápido.
+5. Em **Statistics**: rode *Modularity* e *Average Path Length* se quiser
+   recalcular comunidades dentro do Gephi (resultados serão semelhantes).
+6. Em **Preview**: ative *Node Labels*, escolha fonte e exporte para PDF/SVG.
 """
 
     (OUT / "infranodus_cap1_report.md").write_text(report, encoding="utf-8")

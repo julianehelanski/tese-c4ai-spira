@@ -25,8 +25,8 @@
 | 8 | `humano` | 418 |
 | 9 | `objeto` | 391 |
 | 10 | `inteligencia` | 390 |
-| 11 | `artificial` | 380 |
-| 12 | `campo` | 380 |
+| 11 | `campo` | 380 |
+| 12 | `artificial` | 380 |
 | 13 | `etnografia` | 358 |
 | 14 | `metodo` | 330 |
 | 15 | `sociais` | 304 |
@@ -35,11 +35,11 @@
 | 18 | `tecnico` | 278 |
 | 19 | `latour` | 275 |
 | 20 | `pratica` | 257 |
-| 21 | `dado` | 241 |
-| 22 | `agencia` | 241 |
+| 21 | `agencia` | 241 |
+| 22 | `dado` | 241 |
 | 23 | `conhecimento` | 227 |
-| 24 | `letramento` | 226 |
-| 25 | `cientista` | 226 |
+| 24 | `cientista` | 226 |
+| 25 | `letramento` | 226 |
 | 26 | `actante` | 222 |
 | 27 | `parte` | 221 |
 | 28 | `existencia` | 213 |
@@ -71,24 +71,24 @@
 | 20 | `acao` | 0.0231 |
 
 ## 4. Tópicos latentes (comunidades Louvain)
-- **Tópico 1** (36 termos): claude, pesquisador, modelo, composicao, objeto, escrita
-- **Tópico 2** (33 termos): pesquisa, inteligencia, artificial, etnografia, construcao, tecnico
-- **Tópico 3** (32 termos): rede, agencia, ator, diagrama, distribuida, associacao
-- **Tópico 4** (31 termos): humano, metodo, latour, existencia, maquina, parcial
-- **Tópico 5** (29 termos): ciencia, campo, sociais, dado, conhecimento, cientista
-- **Tópico 6** (15 termos): instituicao, cientifico, computacional, sistemas, compreender, infraestrutura
-- **Tópico 7** (4 termos): tecnica, alienacao, partir, simondon
+- **Tópico 1** (37 termos): claude, pesquisador, modelo, composicao, objeto, escrita
+- **Tópico 2** (33 termos): ciencia, sociais, dado, cientista, laboratorio, social
+- **Tópico 3** (33 termos): rede, latour, agencia, ator, distribuida, associacao
+- **Tópico 4** (27 termos): pesquisa, etnografia, construcao, pratica, centro, vocabulario
+- **Tópico 5** (22 termos): humano, metodo, existencia, maquina, parcial, existencias
+- **Tópico 6** (15 termos): campo, diagrama, tecnica, tornou, visivel, tornava
+- **Tópico 7** (13 termos): inteligencia, artificial, tecnico, conhecimento, letramento, generativa
 
 ## 5. Lacunas estruturais (pares de tópicos fracamente conectados)
 Em InfraNodus, lacunas estruturais sinalizam *espaços de ideia* pouco
 articulados no texto — candidatos a aprofundamento argumentativo.
 
-- Lacuna entre **Tópico 4** [humano, metodo, latour] e **Tópico 5** [ciencia, campo, sociais] — densidade ponderada de ligação = 0.2714
-- Lacuna entre **Tópico 2** [pesquisa, inteligencia, artificial] e **Tópico 3** [rede, agencia, ator] — densidade ponderada de ligação = 0.3608
-- Lacuna entre **Tópico 3** [rede, agencia, ator] e **Tópico 5** [ciencia, campo, sociais] — densidade ponderada de ligação = 0.3642
-- Lacuna entre **Tópico 2** [pesquisa, inteligencia, artificial] e **Tópico 4** [humano, metodo, latour] — densidade ponderada de ligação = 0.3734
-- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 3** [rede, agencia, ator] — densidade ponderada de ligação = 0.4392
-- Lacuna entre **Tópico 3** [rede, agencia, ator] e **Tópico 4** [humano, metodo, latour] — densidade ponderada de ligação = 0.4869
+- Lacuna entre **Tópico 2** [ciencia, sociais, dado] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.2865
+- Lacuna entre **Tópico 2** [ciencia, sociais, dado] e **Tópico 3** [rede, latour, agencia] — densidade ponderada de ligação = 0.3471
+- Lacuna entre **Tópico 4** [pesquisa, etnografia, construcao] e **Tópico 5** [humano, metodo, existencia] — densidade ponderada de ligação = 0.3788
+- Lacuna entre **Tópico 3** [rede, latour, agencia] e **Tópico 4** [pesquisa, etnografia, construcao] — densidade ponderada de ligação = 0.4198
+- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 2** [ciencia, sociais, dado] — densidade ponderada de ligação = 0.4234
+- Lacuna entre **Tópico 1** [claude, pesquisador, modelo] e **Tópico 3** [rede, latour, agencia] — densidade ponderada de ligação = 0.4685
 
 ## 6. Leitura interpretativa
 
@@ -116,3 +116,18 @@ descrito por Barad, e *como* a economia especulativa de promessas
 - `infranodus_cap1_network.png` — rede completa com cores por tópico.
 - `infranodus_cap1_focus.png` — núcleo (top-100 nós, peso ≥ 3).
 - `infranodus_cap1_metrics.json` — métricas brutas (degree, betweenness, comunidades).
+- `infranodus_cap1.gexf` / `infranodus_cap1_focus.gexf` — grafos prontos para Gephi
+  (cor, tamanho, comunidade, frequência, grau ponderado e betweenness embutidos).
+- `infranodus_cap1_nodes.csv` / `infranodus_cap1_edges.csv` (e `_focus_*`) —
+  fallback caso prefira importar como planilha.
+
+## 8. Como abrir no Gephi
+1. Instale Gephi (≥ 0.10): https://gephi.org/users/download/
+2. `File → Open…` → selecione `infranodus_cap1.gexf` (ou `_focus.gexf`).
+3. No painel **Appearance**: já vem com cor por `community` e tamanho por
+   `degree_weighted` (embutidos via atributos `viz`). Ajuste se quiser.
+4. Em **Layout**: aplique *ForceAtlas 2* (ative *Prevent Overlap* e
+   *Dissuade Hubs*) por ~30 s; ou *Fruchterman-Reingold* para algo mais rápido.
+5. Em **Statistics**: rode *Modularity* e *Average Path Length* se quiser
+   recalcular comunidades dentro do Gephi (resultados serão semelhantes).
+6. Em **Preview**: ative *Node Labels*, escolha fonte e exporte para PDF/SVG.

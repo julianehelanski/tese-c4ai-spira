@@ -1,0 +1,1853 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-05-04">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="community" type="long" />
+      <attribute id="1" title="frequency" type="long" />
+      <attribute id="2" title="degree_weighted" type="double" />
+      <attribute id="3" title="betweenness" type="double" />
+    </attributes>
+    <nodes>
+      <node id="producao" label="producao">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="14.25" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="19" />
+          <attvalue for="2" value="55.0" />
+          <attvalue for="3" value="0.001443001443001443" />
+        </attvalues>
+      </node>
+      <node id="ciencia" label="ciencia">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="68.0" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="123" />
+          <attvalue for="2" value="528.0" />
+          <attvalue for="3" value="0.24963924963924963" />
+        </attvalues>
+      </node>
+      <node id="computacional" label="computacional">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="17.090909090909093" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="27" />
+          <attvalue for="2" value="80.0" />
+          <attvalue for="3" value="0.0035044320758606472" />
+        </attvalues>
+      </node>
+      <node id="opera" label="opera">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="19.363636363636363" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="30" />
+          <attvalue for="2" value="100.0" />
+          <attvalue for="3" value="0.0101010101010101" />
+        </attvalues>
+      </node>
+      <node id="constituem" label="constituem">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="14.363636363636363" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="17" />
+          <attvalue for="2" value="56.0" />
+          <attvalue for="3" value="0.00020614306328592042" />
+        </attvalues>
+      </node>
+      <node id="decisoes" label="decisoes">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="19.93181818181818" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="27" />
+          <attvalue for="2" value="105.0" />
+          <attvalue for="3" value="0.0018552875695732837" />
+        </attvalues>
+      </node>
+      <node id="etnografia" label="etnografia">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="38.34090909090909" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="67" />
+          <attvalue for="2" value="267.0" />
+          <attvalue for="3" value="0.022572665429808285" />
+        </attvalues>
+      </node>
+      <node id="maquina" label="maquina">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="24.931818181818183" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="58" />
+          <attvalue for="2" value="149.0" />
+          <attvalue for="3" value="0.008245722531436817" />
+        </attvalues>
+      </node>
+      <node id="tecnica" label="tecnica">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="34" />
+          <attvalue for="2" value="88.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="construcao" label="construcao">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="33.11363636363636" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="46" />
+          <attvalue for="2" value="221.0" />
+          <attvalue for="3" value="0.018449804164089877" />
+        </attvalues>
+      </node>
+      <node id="problema" label="problema">
+        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:size value="13.681818181818182" />
+        <attvalues>
+          <attvalue for="0" value="6" />
+          <attvalue for="1" value="25" />
+          <attvalue for="2" value="50.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="objeto" label="objeto">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="43.56818181818181" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="84" />
+          <attvalue for="2" value="313.0" />
+          <attvalue for="3" value="0.1049268192125335" />
+        </attvalues>
+      </node>
+      <node id="generativa" label="generativa">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="17.090909090909093" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="80.0" />
+          <attvalue for="3" value="0.0026798598227169654" />
+        </attvalues>
+      </node>
+      <node id="compreender" label="compreender">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="14.136363636363637" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="54.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="processo" label="processo">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="18.113636363636363" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="30" />
+          <attvalue for="2" value="89.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="cientista" label="cientista">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="28.34090909090909" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="43" />
+          <attvalue for="2" value="179.0" />
+          <attvalue for="3" value="0.013193156050298907" />
+        </attvalues>
+      </node>
+      <node id="humano" label="humano">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="42.20454545454545" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="113" />
+          <attvalue for="2" value="301.0" />
+          <attvalue for="3" value="0.08946608946608946" />
+        </attvalues>
+      </node>
+      <node id="mediacoes" label="mediacoes">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="16.636363636363637" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="19" />
+          <attvalue for="2" value="76.0" />
+          <attvalue for="3" value="0.006699649556792414" />
+        </attvalues>
+      </node>
+      <node id="instrumentos" label="instrumentos">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="26" />
+          <attvalue for="2" value="88.0" />
+          <attvalue for="3" value="0.006596578025149453" />
+        </attvalues>
+      </node>
+      <node id="instituicao" label="instituicao">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="22.43181818181818" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="39" />
+          <attvalue for="2" value="127.0" />
+          <attvalue for="3" value="0.015718408575551433" />
+        </attvalues>
+      </node>
+      <node id="torna" label="torna">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="17.772727272727273" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="29" />
+          <attvalue for="2" value="86.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="existe" label="existe">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="19.363636363636363" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="100.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="sistemas" label="sistemas">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="16.863636363636363" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="32" />
+          <attvalue for="2" value="78.0" />
+          <attvalue for="3" value="0.006184291898577612" />
+        </attvalues>
+      </node>
+      <node id="campo" label="campo">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="34.13636363636364" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="99" />
+          <attvalue for="2" value="230.0" />
+          <attvalue for="3" value="0.011544011544011544" />
+        </attvalues>
+      </node>
+      <node id="treinamento" label="treinamento">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="16.18181818181818" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="19" />
+          <attvalue for="2" value="72.0" />
+          <attvalue for="3" value="0.004329004329004329" />
+        </attvalues>
+      </node>
+      <node id="politicas" label="politicas">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="14.25" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="24" />
+          <attvalue for="2" value="55.0" />
+          <attvalue for="3" value="0.0005153576582148011" />
+        </attvalues>
+      </node>
+      <node id="licao" label="licao">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="14.818181818181818" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="60.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="associacao" label="associacao">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="22.31818181818182" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="36" />
+          <attvalue for="2" value="126.0" />
+          <attvalue for="3" value="0.01408644265787123" />
+        </attvalues>
+      </node>
+      <node id="actante" label="actante">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="25.613636363636363" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="55" />
+          <attvalue for="2" value="155.0" />
+          <attvalue for="3" value="0.0297876726448155" />
+        </attvalues>
+      </node>
+      <node id="descreve" label="descreve">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="19.59090909090909" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="24" />
+          <attvalue for="2" value="102.0" />
+          <attvalue for="3" value="0.00020614306328592042" />
+        </attvalues>
+      </node>
+      <node id="existencia" label="existencia">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="28.113636363636363" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="30" />
+          <attvalue for="2" value="177.0" />
+          <attvalue for="3" value="0.011131725417439703" />
+        </attvalues>
+      </node>
+      <node id="metodo" label="metodo">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="30.15909090909091" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="69" />
+          <attvalue for="2" value="195.0" />
+          <attvalue for="3" value="0.00989486703772418" />
+        </attvalues>
+      </node>
+      <node id="tecnico" label="tecnico">
+        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:size value="33.22727272727273" />
+        <attvalues>
+          <attvalue for="0" value="6" />
+          <attvalue for="1" value="53" />
+          <attvalue for="2" value="222.0" />
+          <attvalue for="3" value="0.03293135435992579" />
+        </attvalues>
+      </node>
+      <node id="parte" label="parte">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="28.795454545454547" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="42" />
+          <attvalue for="2" value="183.0" />
+          <attvalue for="3" value="0.004019789734075448" />
+        </attvalues>
+      </node>
+      <node id="relacoes" label="relacoes">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="17.090909090909093" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="26" />
+          <attvalue for="2" value="80.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="modos" label="modos">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="15.5" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="66.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="teoria" label="teoria">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="22.772727272727273" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="24" />
+          <attvalue for="2" value="130.0" />
+          <attvalue for="3" value="0.004741290455576169" />
+        </attvalues>
+      </node>
+      <node id="tecnologia" label="tecnologia">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="17.204545454545453" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="45" />
+          <attvalue for="2" value="81.0" />
+          <attvalue for="3" value="0.00515357658214801" />
+        </attvalues>
+      </node>
+      <node id="escrita" label="escrita">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="34.93181818181818" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="40" />
+          <attvalue for="2" value="237.0" />
+          <attvalue for="3" value="0.01443001443001443" />
+        </attvalues>
+      </node>
+      <node id="cientifico" label="cientifico">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="15.15909090909091" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="39" />
+          <attvalue for="2" value="63.0" />
+          <attvalue for="3" value="0.002886002886002886" />
+        </attvalues>
+      </node>
+      <node id="conhecimento" label="conhecimento">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="28.113636363636363" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="40" />
+          <attvalue for="2" value="177.0" />
+          <attvalue for="3" value="0.03813646670789528" />
+        </attvalues>
+      </node>
+      <node id="parcial" label="parcial">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="25.15909090909091" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="30" />
+          <attvalue for="2" value="151.0" />
+          <attvalue for="3" value="0.003092145949288806" />
+        </attvalues>
+      </node>
+      <node id="pratica" label="pratica">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="30.386363636363637" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="57" />
+          <attvalue for="2" value="197.0" />
+          <attvalue for="3" value="0.021954236239950523" />
+        </attvalues>
+      </node>
+      <node id="sociais" label="sociais">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="35.95454545454545" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="58" />
+          <attvalue for="2" value="246.0" />
+          <attvalue for="3" value="0.05627705627705627" />
+        </attvalues>
+      </node>
+      <node id="spira" label="spira">
+        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:size value="15.727272727272727" />
+        <attvalues>
+          <attvalue for="0" value="6" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="68.0" />
+          <attvalue for="3" value="0.0008245722531436817" />
+        </attvalues>
+      </node>
+      <node id="regra" label="regra">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="17.31818181818182" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="14" />
+          <attvalue for="2" value="82.0" />
+          <attvalue for="3" value="0.006390434961863533" />
+        </attvalues>
+      </node>
+      <node id="entidades" label="entidades">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="17.886363636363637" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="29" />
+          <attvalue for="2" value="87.0" />
+          <attvalue for="3" value="0.01030715316429602" />
+        </attvalues>
+      </node>
+      <node id="inteligencia" label="inteligencia">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="48.68181818181818" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="67" />
+          <attvalue for="2" value="358.0" />
+          <attvalue for="3" value="0.03772418058132344" />
+        </attvalues>
+      </node>
+      <node id="laboratorio" label="laboratorio">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="22.31818181818182" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="46" />
+          <attvalue for="2" value="126.0" />
+          <attvalue for="3" value="0.008864151721294579" />
+        </attvalues>
+      </node>
+      <node id="tornou" label="tornou">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="13.681818181818182" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="18" />
+          <attvalue for="2" value="50.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="diferentes" label="diferentes">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="15.613636363636363" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="30" />
+          <attvalue for="2" value="67.0" />
+          <attvalue for="3" value="0.001443001443001443" />
+        </attvalues>
+      </node>
+      <node id="social" label="social">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="23.909090909090907" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="35" />
+          <attvalue for="2" value="140.0" />
+          <attvalue for="3" value="0.008245722531436817" />
+        </attvalues>
+      </node>
+      <node id="parciais" label="parciais">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="24.136363636363637" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="32" />
+          <attvalue for="2" value="142.0" />
+          <attvalue for="3" value="0.0035044320758606472" />
+        </attvalues>
+      </node>
+      <node id="acesso" label="acesso">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="17.31818181818182" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="29" />
+          <attvalue for="2" value="82.0" />
+          <attvalue for="3" value="0.0012368583797155224" />
+        </attvalues>
+      </node>
+      <node id="existencias" label="existencias">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="25.045454545454547" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="32" />
+          <attvalue for="2" value="150.0" />
+          <attvalue for="3" value="0.018552875695732836" />
+        </attvalues>
+      </node>
+      <node id="rede" label="rede">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="59.70454545454545" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="153" />
+          <attvalue for="2" value="455.0" />
+          <attvalue for="3" value="0.1598467669896241" />
+        </attvalues>
+      </node>
+      <node id="artificial" label="artificial">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="45.72727272727273" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="63" />
+          <attvalue for="2" value="332.0" />
+          <attvalue for="3" value="0.02061430632859204" />
+        </attvalues>
+      </node>
+      <node id="linguagem" label="linguagem">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="27.318181818181817" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="42" />
+          <attvalue for="2" value="170.0" />
+          <attvalue for="3" value="0.011750154607297465" />
+        </attvalues>
+      </node>
+      <node id="condicao" label="condicao">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="18.227272727272727" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="31" />
+          <attvalue for="2" value="90.0" />
+          <attvalue for="3" value="0.0013399299113584827" />
+        </attvalues>
+      </node>
+      <node id="simetria" label="simetria">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="19.363636363636363" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="22" />
+          <attvalue for="2" value="100.0" />
+          <attvalue for="3" value="0.026283240568954855" />
+        </attvalues>
+      </node>
+      <node id="composicao" label="composicao">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="49.70454545454545" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="94" />
+          <attvalue for="2" value="367.0" />
+          <attvalue for="3" value="0.0696763553906411" />
+        </attvalues>
+      </node>
+      <node id="trata" label="trata">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="12.09090909090909" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="19" />
+          <attvalue for="2" value="36.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="pesquisador" label="pesquisador">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="51.409090909090914" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="125" />
+          <attvalue for="2" value="382.0" />
+          <attvalue for="3" value="0.11691747406033119" />
+        </attvalues>
+      </node>
+      <node id="condicoes" label="condicoes">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="14.818181818181818" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="18" />
+          <attvalue for="2" value="60.0" />
+          <attvalue for="3" value="0.00041228612657184083" />
+        </attvalues>
+      </node>
+      <node id="mundo" label="mundo">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="15.5" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="66.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="distribuida" label="distribuida">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="24.818181818181817" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="26" />
+          <attvalue for="2" value="148.0" />
+          <attvalue for="3" value="0.001443001443001443" />
+        </attvalues>
+      </node>
+      <node id="analise" label="analise">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="14.931818181818182" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="33" />
+          <attvalue for="2" value="61.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="politica" label="politica">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="16.863636363636363" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="78.0" />
+          <attvalue for="3" value="0.004638218923933209" />
+        </attvalues>
+      </node>
+      <node id="faire" label="faire">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="17.090909090909093" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="80.0" />
+          <attvalue for="3" value="0.0016491445062873633" />
+        </attvalues>
+      </node>
+      <node id="latour" label="latour">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="28.34090909090909" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="77" />
+          <attvalue for="2" value="179.0" />
+          <attvalue for="3" value="0.04916512059369202" />
+        </attvalues>
+      </node>
+      <node id="produz" label="produz">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="16.75" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="77.0" />
+          <attvalue for="3" value="0.006493506493506493" />
+        </attvalues>
+      </node>
+      <node id="revelou" label="revelou">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="18.340909090909093" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="23" />
+          <attvalue for="2" value="91.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="letramento" label="letramento">
+        <viz:color r="23" g="190" b="207" a="1.0" />
+        <viz:size value="29.81818181818182" />
+        <attvalues>
+          <attvalue for="0" value="6" />
+          <attvalue for="1" value="42" />
+          <attvalue for="2" value="192.0" />
+          <attvalue for="3" value="0.007472686044114615" />
+        </attvalues>
+      </node>
+      <node id="inscricao" label="inscricao">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="19.25" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="36" />
+          <attvalue for="2" value="99.0" />
+          <attvalue for="3" value="0.003452896310039167" />
+        </attvalues>
+      </node>
+      <node id="modelo" label="modelo">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="52.31818181818182" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="112" />
+          <attvalue for="2" value="390.0" />
+          <attvalue for="3" value="0.06240981240981241" />
+        </attvalues>
+      </node>
+      <node id="vocabulario" label="vocabulario">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="20.272727272727273" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="31" />
+          <attvalue for="2" value="108.0" />
+          <attvalue for="3" value="0.0007215007215007215" />
+        </attvalues>
+      </node>
+      <node id="ontologia" label="ontologia">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="15.15909090909091" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="25" />
+          <attvalue for="2" value="63.0" />
+          <attvalue for="3" value="0.0006184291898577612" />
+        </attvalues>
+      </node>
+      <node id="precisamente" label="precisamente">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="16.863636363636363" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="26" />
+          <attvalue for="2" value="78.0" />
+          <attvalue for="3" value="0.00020614306328592042" />
+        </attvalues>
+      </node>
+      <node id="percurso" label="percurso">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="15.5" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="66.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="diagrama" label="diagrama">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="21.295454545454547" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="38" />
+          <attvalue for="2" value="117.0" />
+          <attvalue for="3" value="0.0021645021645021645" />
+        </attvalues>
+      </node>
+      <node id="claude" label="claude">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="63.11363636363637" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="117" />
+          <attvalue for="2" value="485.0" />
+          <attvalue for="3" value="0.17525596097024668" />
+        </attvalues>
+      </node>
+      <node id="produzem" label="produzem">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="17.772727272727273" />
+        <attvalues>
+          <attvalue for="0" value="4" />
+          <attvalue for="1" value="16" />
+          <attvalue for="2" value="86.0" />
+          <attvalue for="3" value="0.0012368583797155224" />
+        </attvalues>
+      </node>
+      <node id="agencia" label="agencia">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="30.727272727272727" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="44" />
+          <attvalue for="2" value="200.0" />
+          <attvalue for="3" value="0.02865388579674294" />
+        </attvalues>
+      </node>
+      <node id="tecnicas" label="tecnicas">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="15.84090909090909" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="22" />
+          <attvalue for="2" value="69.0" />
+          <attvalue for="3" value="0.0012368583797155224" />
+        </attvalues>
+      </node>
+      <node id="tecnociencia" label="tecnociencia">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="16.18181818181818" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="15" />
+          <attvalue for="2" value="72.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="pergunta" label="pergunta">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="20.954545454545453" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="39" />
+          <attvalue for="2" value="114.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="dado" label="dado">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="31.068181818181817" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="59" />
+          <attvalue for="2" value="203.0" />
+          <attvalue for="3" value="0.06328592042877756" />
+        </attvalues>
+      </node>
+      <node id="relacao" label="relacao">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="15.613636363636363" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="29" />
+          <attvalue for="2" value="67.0" />
+          <attvalue for="3" value="0.00020614306328592042" />
+        </attvalues>
+      </node>
+      <node id="descricao" label="descricao">
+        <viz:color r="188" g="189" b="34" a="1.0" />
+        <viz:size value="14.477272727272727" />
+        <attvalues>
+          <attvalue for="0" value="5" />
+          <attvalue for="1" value="17" />
+          <attvalue for="2" value="57.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="computacao" label="computacao">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="20.386363636363637" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="25" />
+          <attvalue for="2" value="109.0" />
+          <attvalue for="3" value="0.00041228612657184083" />
+        </attvalues>
+      </node>
+      <node id="acao" label="acao">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="19.93181818181818" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="23" />
+          <attvalue for="2" value="105.0" />
+          <attvalue for="3" value="0.0313337456194599" />
+        </attvalues>
+      </node>
+      <node id="colaboracao" label="colaboracao">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="24.136363636363637" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="38" />
+          <attvalue for="2" value="142.0" />
+          <attvalue for="3" value="0.007781900639043496" />
+        </attvalues>
+      </node>
+      <node id="ator" label="ator">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="26.295454545454547" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="40" />
+          <attvalue for="2" value="161.0" />
+          <attvalue for="3" value="0.003092145949288806" />
+        </attvalues>
+      </node>
+      <node id="cadeia" label="cadeia">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="18.454545454545453" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="24" />
+          <attvalue for="2" value="92.0" />
+          <attvalue for="3" value="0.00041228612657184083" />
+        </attvalues>
+      </node>
+      <node id="centro" label="centro">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="24.363636363636363" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="48" />
+          <attvalue for="2" value="144.0" />
+          <attvalue for="3" value="0.03050917336631622" />
+        </attvalues>
+      </node>
+      <node id="infraestrutura" label="infraestrutura">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="17.43181818181818" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="21" />
+          <attvalue for="2" value="83.0" />
+          <attvalue for="3" value="0.005668934240362812" />
+        </attvalues>
+      </node>
+      <node id="pesquisa" label="pesquisa">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="63.34090909090909" />
+        <attvalues>
+          <attvalue for="0" value="1" />
+          <attvalue for="1" value="165" />
+          <attvalue for="2" value="487.0" />
+          <attvalue for="3" value="0.18205868205868203" />
+        </attvalues>
+      </node>
+      <node id="termos" label="termos">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="20.5" />
+        <attvalues>
+          <attvalue for="0" value="2" />
+          <attvalue for="1" value="27" />
+          <attvalue for="2" value="110.0" />
+          <attvalue for="3" value="0.0010822510822510823" />
+        </attvalues>
+      </node>
+      <node id="significa" label="significa">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="15.613636363636363" />
+        <attvalues>
+          <attvalue for="0" value="0" />
+          <attvalue for="1" value="19" />
+          <attvalue for="2" value="67.0" />
+          <attvalue for="3" value="0.0" />
+        </attvalues>
+      </node>
+      <node id="responsabilidade" label="responsabilidade">
+        <viz:color r="140" g="86" b="75" a="1.0" />
+        <viz:size value="14.931818181818182" />
+        <attvalues>
+          <attvalue for="0" value="3" />
+          <attvalue for="1" value="20" />
+          <attvalue for="2" value="61.0" />
+          <attvalue for="3" value="0.00041228612657184083" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="producao" target="conhecimento" id="0" weight="21.0" />
+      <edge source="producao" target="significa" id="1" weight="6.0" />
+      <edge source="producao" target="ciencia" id="2" weight="8.0" />
+      <edge source="producao" target="actante" id="3" weight="10.0" />
+      <edge source="producao" target="rede" id="4" weight="6.0" />
+      <edge source="producao" target="relacoes" id="5" weight="4.0" />
+      <edge source="ciencia" target="cientista" id="6" weight="3.0" />
+      <edge source="ciencia" target="latour" id="7" weight="18.0" />
+      <edge source="ciencia" target="acao" id="8" weight="17.0" />
+      <edge source="ciencia" target="sociais" id="9" weight="100.0" />
+      <edge source="ciencia" target="tecnologia" id="10" weight="27.0" />
+      <edge source="ciencia" target="significa" id="11" weight="9.0" />
+      <edge source="ciencia" target="conhecimento" id="12" weight="13.0" />
+      <edge source="ciencia" target="humano" id="13" weight="3.0" />
+      <edge source="ciencia" target="construcao" id="14" weight="41.0" />
+      <edge source="ciencia" target="pesquisa" id="15" weight="21.0" />
+      <edge source="ciencia" target="dado" id="16" weight="44.0" />
+      <edge source="ciencia" target="condicao" id="17" weight="4.0" />
+      <edge source="ciencia" target="condicoes" id="18" weight="6.0" />
+      <edge source="ciencia" target="instrumentos" id="19" weight="8.0" />
+      <edge source="ciencia" target="inscricao" id="20" weight="4.0" />
+      <edge source="ciencia" target="diagrama" id="21" weight="4.0" />
+      <edge source="ciencia" target="campo" id="22" weight="12.0" />
+      <edge source="ciencia" target="pesquisador" id="23" weight="12.0" />
+      <edge source="ciencia" target="etnografia" id="24" weight="10.0" />
+      <edge source="ciencia" target="computacao" id="25" weight="18.0" />
+      <edge source="ciencia" target="politica" id="26" weight="34.0" />
+      <edge source="ciencia" target="inteligencia" id="27" weight="4.0" />
+      <edge source="ciencia" target="artificial" id="28" weight="8.0" />
+      <edge source="ciencia" target="metodo" id="29" weight="4.0" />
+      <edge source="ciencia" target="objeto" id="30" weight="14.0" />
+      <edge source="ciencia" target="torna" id="31" weight="12.0" />
+      <edge source="ciencia" target="social" id="32" weight="14.0" />
+      <edge source="ciencia" target="pergunta" id="33" weight="8.0" />
+      <edge source="ciencia" target="computacional" id="34" weight="4.0" />
+      <edge source="ciencia" target="licao" id="35" weight="6.0" />
+      <edge source="ciencia" target="parte" id="36" weight="6.0" />
+      <edge source="ciencia" target="precisamente" id="37" weight="6.0" />
+      <edge source="ciencia" target="modelo" id="38" weight="4.0" />
+      <edge source="ciencia" target="tecnica" id="39" weight="10.0" />
+      <edge source="ciencia" target="tecnociencia" id="40" weight="8.0" />
+      <edge source="ciencia" target="termos" id="41" weight="4.0" />
+      <edge source="computacional" target="infraestrutura" id="42" weight="24.0" />
+      <edge source="computacional" target="humano" id="43" weight="5.0" />
+      <edge source="computacional" target="dado" id="44" weight="9.0" />
+      <edge source="computacional" target="rede" id="45" weight="3.0" />
+      <edge source="computacional" target="pratica" id="46" weight="3.0" />
+      <edge source="computacional" target="regra" id="47" weight="4.0" />
+      <edge source="computacional" target="laboratorio" id="48" weight="4.0" />
+      <edge source="computacional" target="social" id="49" weight="6.0" />
+      <edge source="computacional" target="pesquisa" id="50" weight="6.0" />
+      <edge source="computacional" target="modelo" id="51" weight="6.0" />
+      <edge source="computacional" target="politicas" id="52" weight="6.0" />
+      <edge source="opera" target="simetria" id="53" weight="10.0" />
+      <edge source="opera" target="claude" id="54" weight="12.0" />
+      <edge source="opera" target="pesquisador" id="55" weight="18.0" />
+      <edge source="opera" target="sociais" id="56" weight="6.0" />
+      <edge source="opera" target="composicao" id="57" weight="6.0" />
+      <edge source="opera" target="faire" id="58" weight="10.0" />
+      <edge source="opera" target="precisamente" id="59" weight="4.0" />
+      <edge source="opera" target="latour" id="60" weight="6.0" />
+      <edge source="opera" target="regra" id="61" weight="6.0" />
+      <edge source="opera" target="metodo" id="62" weight="4.0" />
+      <edge source="opera" target="revelou" id="63" weight="4.0" />
+      <edge source="opera" target="instituicao" id="64" weight="4.0" />
+      <edge source="opera" target="letramento" id="65" weight="6.0" />
+      <edge source="opera" target="social" id="66" weight="4.0" />
+      <edge source="constituem" target="associacao" id="67" weight="16.0" />
+      <edge source="constituem" target="claude" id="68" weight="6.0" />
+      <edge source="constituem" target="existe" id="69" weight="4.0" />
+      <edge source="constituem" target="acesso" id="70" weight="6.0" />
+      <edge source="constituem" target="humano" id="71" weight="4.0" />
+      <edge source="constituem" target="diagrama" id="72" weight="4.0" />
+      <edge source="constituem" target="inscricao" id="73" weight="6.0" />
+      <edge source="constituem" target="etnografia" id="74" weight="6.0" />
+      <edge source="constituem" target="metodo" id="75" weight="4.0" />
+      <edge source="decisoes" target="modelo" id="76" weight="10.0" />
+      <edge source="decisoes" target="metodo" id="77" weight="6.0" />
+      <edge source="decisoes" target="descreve" id="78" weight="3.0" />
+      <edge source="decisoes" target="parcial" id="79" weight="4.0" />
+      <edge source="decisoes" target="humano" id="80" weight="30.0" />
+      <edge source="decisoes" target="processo" id="81" weight="4.0" />
+      <edge source="decisoes" target="existe" id="82" weight="4.0" />
+      <edge source="decisoes" target="claude" id="83" weight="4.0" />
+      <edge source="decisoes" target="objeto" id="84" weight="6.0" />
+      <edge source="decisoes" target="politicas" id="85" weight="4.0" />
+      <edge source="decisoes" target="infraestrutura" id="86" weight="6.0" />
+      <edge source="decisoes" target="pesquisa" id="87" weight="4.0" />
+      <edge source="decisoes" target="responsabilidade" id="88" weight="6.0" />
+      <edge source="decisoes" target="maquina" id="89" weight="4.0" />
+      <edge source="decisoes" target="composicao" id="90" weight="4.0" />
+      <edge source="decisoes" target="pesquisador" id="91" weight="6.0" />
+      <edge source="etnografia" target="centro" id="92" weight="25.0" />
+      <edge source="etnografia" target="inteligencia" id="93" weight="8.0" />
+      <edge source="etnografia" target="artificial" id="94" weight="5.0" />
+      <edge source="etnografia" target="objeto" id="95" weight="16.0" />
+      <edge source="etnografia" target="descricao" id="96" weight="9.0" />
+      <edge source="etnografia" target="metodo" id="97" weight="8.0" />
+      <edge source="etnografia" target="pratica" id="98" weight="11.0" />
+      <edge source="etnografia" target="pergunta" id="99" weight="8.0" />
+      <edge source="etnografia" target="diferentes" id="100" weight="3.0" />
+      <edge source="etnografia" target="claude" id="101" weight="10.0" />
+      <edge source="etnografia" target="cadeia" id="102" weight="6.0" />
+      <edge source="etnografia" target="composicao" id="103" weight="4.0" />
+      <edge source="etnografia" target="generativa" id="104" weight="4.0" />
+      <edge source="etnografia" target="dado" id="105" weight="18.0" />
+      <edge source="etnografia" target="pesquisa" id="106" weight="18.0" />
+      <edge source="etnografia" target="conhecimento" id="107" weight="6.0" />
+      <edge source="etnografia" target="mediacoes" id="108" weight="6.0" />
+      <edge source="etnografia" target="tecnicas" id="109" weight="4.0" />
+      <edge source="etnografia" target="inscricao" id="110" weight="6.0" />
+      <edge source="etnografia" target="relacoes" id="111" weight="8.0" />
+      <edge source="etnografia" target="tecnociencia" id="112" weight="4.0" />
+      <edge source="etnografia" target="condicoes" id="113" weight="4.0" />
+      <edge source="etnografia" target="construcao" id="114" weight="12.0" />
+      <edge source="etnografia" target="politica" id="115" weight="4.0" />
+      <edge source="etnografia" target="laboratorio" id="116" weight="6.0" />
+      <edge source="etnografia" target="rede" id="117" weight="12.0" />
+      <edge source="etnografia" target="percurso" id="118" weight="6.0" />
+      <edge source="etnografia" target="letramento" id="119" weight="6.0" />
+      <edge source="etnografia" target="tecnico" id="120" weight="4.0" />
+      <edge source="etnografia" target="licao" id="121" weight="6.0" />
+      <edge source="etnografia" target="compreender" id="122" weight="4.0" />
+      <edge source="maquina" target="computacao" id="123" weight="3.0" />
+      <edge source="maquina" target="existencias" id="124" weight="4.0" />
+      <edge source="maquina" target="parciais" id="125" weight="6.0" />
+      <edge source="maquina" target="composicao" id="126" weight="4.0" />
+      <edge source="maquina" target="humano" id="127" weight="50.0" />
+      <edge source="maquina" target="artificial" id="128" weight="4.0" />
+      <edge source="maquina" target="escrita" id="129" weight="6.0" />
+      <edge source="maquina" target="agencia" id="130" weight="6.0" />
+      <edge source="maquina" target="distribuida" id="131" weight="4.0" />
+      <edge source="maquina" target="vocabulario" id="132" weight="8.0" />
+      <edge source="maquina" target="entidades" id="133" weight="18.0" />
+      <edge source="maquina" target="pratica" id="134" weight="6.0" />
+      <edge source="maquina" target="pergunta" id="135" weight="6.0" />
+      <edge source="maquina" target="ontologia" id="136" weight="6.0" />
+      <edge source="maquina" target="latour" id="137" weight="4.0" />
+      <edge source="maquina" target="precisamente" id="138" weight="10.0" />
+      <edge source="tecnica" target="rede" id="139" weight="4.0" />
+      <edge source="tecnica" target="letramento" id="140" weight="6.0" />
+      <edge source="tecnica" target="precisamente" id="141" weight="4.0" />
+      <edge source="tecnica" target="pesquisador" id="142" weight="4.0" />
+      <edge source="tecnica" target="modelo" id="143" weight="6.0" />
+      <edge source="tecnica" target="condicoes" id="144" weight="4.0" />
+      <edge source="tecnica" target="social" id="145" weight="6.0" />
+      <edge source="tecnica" target="associacao" id="146" weight="6.0" />
+      <edge source="tecnica" target="trata" id="147" weight="4.0" />
+      <edge source="tecnica" target="colaboracao" id="148" weight="4.0" />
+      <edge source="tecnica" target="vocabulario" id="149" weight="4.0" />
+      <edge source="tecnica" target="campo" id="150" weight="4.0" />
+      <edge source="tecnica" target="linguagem" id="151" weight="12.0" />
+      <edge source="tecnica" target="termos" id="152" weight="6.0" />
+      <edge source="tecnica" target="tecnociencia" id="153" weight="4.0" />
+      <edge source="construcao" target="pratica" id="154" weight="6.0" />
+      <edge source="construcao" target="pesquisa" id="155" weight="24.0" />
+      <edge source="construcao" target="pesquisador" id="156" weight="8.0" />
+      <edge source="construcao" target="instituicao" id="157" weight="3.0" />
+      <edge source="construcao" target="rede" id="158" weight="13.0" />
+      <edge source="construcao" target="humano" id="159" weight="4.0" />
+      <edge source="construcao" target="dado" id="160" weight="4.0" />
+      <edge source="construcao" target="modelo" id="161" weight="10.0" />
+      <edge source="construcao" target="processo" id="162" weight="6.0" />
+      <edge source="construcao" target="linguagem" id="163" weight="6.0" />
+      <edge source="construcao" target="claude" id="164" weight="4.0" />
+      <edge source="construcao" target="modos" id="165" weight="6.0" />
+      <edge source="construcao" target="existencia" id="166" weight="4.0" />
+      <edge source="construcao" target="relacao" id="167" weight="4.0" />
+      <edge source="construcao" target="inteligencia" id="168" weight="12.0" />
+      <edge source="construcao" target="artificial" id="169" weight="14.0" />
+      <edge source="construcao" target="diagrama" id="170" weight="6.0" />
+      <edge source="construcao" target="inscricao" id="171" weight="4.0" />
+      <edge source="construcao" target="acao" id="172" weight="4.0" />
+      <edge source="construcao" target="significa" id="173" weight="6.0" />
+      <edge source="construcao" target="associacao" id="174" weight="4.0" />
+      <edge source="construcao" target="relacoes" id="175" weight="4.0" />
+      <edge source="construcao" target="centro" id="176" weight="8.0" />
+      <edge source="construcao" target="sociais" id="177" weight="4.0" />
+      <edge source="problema" target="metodo" id="178" weight="4.0" />
+      <edge source="problema" target="acesso" id="179" weight="6.0" />
+      <edge source="problema" target="trata" id="180" weight="4.0" />
+      <edge source="problema" target="relacao" id="181" weight="4.0" />
+      <edge source="problema" target="spira" id="182" weight="6.0" />
+      <edge source="problema" target="objeto" id="183" weight="4.0" />
+      <edge source="problema" target="tecnico" id="184" weight="6.0" />
+      <edge source="problema" target="inteligencia" id="185" weight="4.0" />
+      <edge source="problema" target="artificial" id="186" weight="6.0" />
+      <edge source="problema" target="letramento" id="187" weight="6.0" />
+      <edge source="objeto" target="mundo" id="188" weight="10.0" />
+      <edge source="objeto" target="latour" id="189" weight="9.0" />
+      <edge source="objeto" target="pergunta" id="190" weight="11.0" />
+      <edge source="objeto" target="torna" id="191" weight="9.0" />
+      <edge source="objeto" target="tecnico" id="192" weight="6.0" />
+      <edge source="objeto" target="instituicao" id="193" weight="3.0" />
+      <edge source="objeto" target="rede" id="194" weight="7.0" />
+      <edge source="objeto" target="vocabulario" id="195" weight="6.0" />
+      <edge source="objeto" target="tornou" id="196" weight="3.0" />
+      <edge source="objeto" target="relacao" id="197" weight="8.0" />
+      <edge source="objeto" target="produz" id="198" weight="10.0" />
+      <edge source="objeto" target="diferentes" id="199" weight="13.0" />
+      <edge source="objeto" target="pratica" id="200" weight="11.0" />
+      <edge source="objeto" target="produzem" id="201" weight="4.0" />
+      <edge source="objeto" target="relacoes" id="202" weight="4.0" />
+      <edge source="objeto" target="centro" id="203" weight="3.0" />
+      <edge source="objeto" target="claude" id="204" weight="32.0" />
+      <edge source="objeto" target="modelo" id="205" weight="8.0" />
+      <edge source="objeto" target="existe" id="206" weight="6.0" />
+      <edge source="objeto" target="ontologia" id="207" weight="10.0" />
+      <edge source="objeto" target="condicao" id="208" weight="4.0" />
+      <edge source="objeto" target="escrita" id="209" weight="6.0" />
+      <edge source="objeto" target="metodo" id="210" weight="4.0" />
+      <edge source="objeto" target="diagrama" id="211" weight="6.0" />
+      <edge source="objeto" target="instrumentos" id="212" weight="4.0" />
+      <edge source="objeto" target="analise" id="213" weight="6.0" />
+      <edge source="objeto" target="composicao" id="214" weight="4.0" />
+      <edge source="objeto" target="pesquisador" id="215" weight="10.0" />
+      <edge source="objeto" target="modos" id="216" weight="6.0" />
+      <edge source="objeto" target="pesquisa" id="217" weight="16.0" />
+      <edge source="objeto" target="spira" id="218" weight="6.0" />
+      <edge source="objeto" target="social" id="219" weight="16.0" />
+      <edge source="objeto" target="sociais" id="220" weight="6.0" />
+      <edge source="objeto" target="laboratorio" id="221" weight="6.0" />
+      <edge source="generativa" target="inteligencia" id="222" weight="8.0" />
+      <edge source="generativa" target="artificial" id="223" weight="12.0" />
+      <edge source="generativa" target="distribuida" id="224" weight="4.0" />
+      <edge source="generativa" target="sistemas" id="225" weight="12.0" />
+      <edge source="generativa" target="claude" id="226" weight="10.0" />
+      <edge source="generativa" target="colaboracao" id="227" weight="6.0" />
+      <edge source="generativa" target="metodo" id="228" weight="4.0" />
+      <edge source="generativa" target="pratica" id="229" weight="4.0" />
+      <edge source="generativa" target="composicao" id="230" weight="6.0" />
+      <edge source="generativa" target="dado" id="231" weight="6.0" />
+      <edge source="generativa" target="pesquisa" id="232" weight="4.0" />
+      <edge source="compreender" target="sistemas" id="233" weight="10.0" />
+      <edge source="compreender" target="inteligencia" id="234" weight="4.0" />
+      <edge source="compreender" target="pesquisador" id="235" weight="6.0" />
+      <edge source="compreender" target="letramento" id="236" weight="6.0" />
+      <edge source="compreender" target="instrumentos" id="237" weight="6.0" />
+      <edge source="compreender" target="responsabilidade" id="238" weight="6.0" />
+      <edge source="compreender" target="latour" id="239" weight="4.0" />
+      <edge source="compreender" target="termos" id="240" weight="4.0" />
+      <edge source="compreender" target="campo" id="241" weight="4.0" />
+      <edge source="processo" target="pesquisa" id="242" weight="3.0" />
+      <edge source="processo" target="modelo" id="243" weight="10.0" />
+      <edge source="processo" target="composicao" id="244" weight="16.0" />
+      <edge source="processo" target="produz" id="245" weight="6.0" />
+      <edge source="processo" target="escrita" id="246" weight="10.0" />
+      <edge source="processo" target="relacao" id="247" weight="4.0" />
+      <edge source="processo" target="metodo" id="248" weight="4.0" />
+      <edge source="processo" target="inteligencia" id="249" weight="4.0" />
+      <edge source="processo" target="artificial" id="250" weight="6.0" />
+      <edge source="processo" target="letramento" id="251" weight="6.0" />
+      <edge source="processo" target="revelou" id="252" weight="6.0" />
+      <edge source="processo" target="relacoes" id="253" weight="4.0" />
+      <edge source="cientista" target="laboratorio" id="254" weight="25.0" />
+      <edge source="cientista" target="pesquisa" id="255" weight="7.0" />
+      <edge source="cientista" target="significa" id="256" weight="6.0" />
+      <edge source="cientista" target="social" id="257" weight="24.0" />
+      <edge source="cientista" target="tecnico" id="258" weight="8.0" />
+      <edge source="cientista" target="inteligencia" id="259" weight="4.0" />
+      <edge source="cientista" target="computacao" id="260" weight="38.0" />
+      <edge source="cientista" target="sociais" id="261" weight="50.0" />
+      <edge source="cientista" target="pergunta" id="262" weight="4.0" />
+      <edge source="cientista" target="campo" id="263" weight="6.0" />
+      <edge source="cientista" target="letramento" id="264" weight="4.0" />
+      <edge source="humano" target="responsabilidade" id="265" weight="7.0" />
+      <edge source="humano" target="instituicao" id="266" weight="9.0" />
+      <edge source="humano" target="rede" id="267" weight="12.0" />
+      <edge source="humano" target="actante" id="268" weight="13.0" />
+      <edge source="humano" target="dado" id="269" weight="8.0" />
+      <edge source="humano" target="simetria" id="270" weight="4.0" />
+      <edge source="humano" target="termos" id="271" weight="12.0" />
+      <edge source="humano" target="entidades" id="272" weight="26.0" />
+      <edge source="humano" target="parcial" id="273" weight="18.0" />
+      <edge source="humano" target="existencia" id="274" weight="22.0" />
+      <edge source="humano" target="linguagem" id="275" weight="10.0" />
+      <edge source="humano" target="claude" id="276" weight="4.0" />
+      <edge source="humano" target="modelo" id="277" weight="8.0" />
+      <edge source="humano" target="precisamente" id="278" weight="6.0" />
+      <edge source="humano" target="latour" id="279" weight="4.0" />
+      <edge source="humano" target="conhecimento" id="280" weight="10.0" />
+      <edge source="humano" target="produzem" id="281" weight="10.0" />
+      <edge source="humano" target="associacao" id="282" weight="6.0" />
+      <edge source="humano" target="existencias" id="283" weight="4.0" />
+      <edge source="humano" target="infraestrutura" id="284" weight="6.0" />
+      <edge source="humano" target="colaboracao" id="285" weight="6.0" />
+      <edge source="mediacoes" target="rede" id="286" weight="14.0" />
+      <edge source="mediacoes" target="existe" id="287" weight="4.0" />
+      <edge source="mediacoes" target="tecnicas" id="288" weight="18.0" />
+      <edge source="mediacoes" target="tornou" id="289" weight="6.0" />
+      <edge source="mediacoes" target="agencia" id="290" weight="4.0" />
+      <edge source="mediacoes" target="conhecimento" id="291" weight="4.0" />
+      <edge source="mediacoes" target="distribuida" id="292" weight="4.0" />
+      <edge source="mediacoes" target="cadeia" id="293" weight="6.0" />
+      <edge source="mediacoes" target="actante" id="294" weight="6.0" />
+      <edge source="mediacoes" target="artificial" id="295" weight="4.0" />
+      <edge source="instrumentos" target="agencia" id="296" weight="4.0" />
+      <edge source="instrumentos" target="conhecimento" id="297" weight="4.0" />
+      <edge source="instrumentos" target="inscricao" id="298" weight="18.0" />
+      <edge source="instrumentos" target="colaboracao" id="299" weight="4.0" />
+      <edge source="instrumentos" target="laboratorio" id="300" weight="10.0" />
+      <edge source="instrumentos" target="mundo" id="301" weight="4.0" />
+      <edge source="instrumentos" target="rede" id="302" weight="4.0" />
+      <edge source="instrumentos" target="diagrama" id="303" weight="6.0" />
+      <edge source="instrumentos" target="analise" id="304" weight="6.0" />
+      <edge source="instrumentos" target="associacao" id="305" weight="6.0" />
+      <edge source="instrumentos" target="torna" id="306" weight="4.0" />
+      <edge source="instituicao" target="rede" id="307" weight="20.0" />
+      <edge source="instituicao" target="actante" id="308" weight="3.0" />
+      <edge source="instituicao" target="pesquisa" id="309" weight="11.0" />
+      <edge source="instituicao" target="pratica" id="310" weight="5.0" />
+      <edge source="instituicao" target="infraestrutura" id="311" weight="20.0" />
+      <edge source="instituicao" target="pesquisador" id="312" weight="9.0" />
+      <edge source="instituicao" target="campo" id="313" weight="10.0" />
+      <edge source="instituicao" target="percurso" id="314" weight="6.0" />
+      <edge source="instituicao" target="cadeia" id="315" weight="4.0" />
+      <edge source="instituicao" target="revelou" id="316" weight="4.0" />
+      <edge source="instituicao" target="colaboracao" id="317" weight="6.0" />
+      <edge source="instituicao" target="letramento" id="318" weight="6.0" />
+      <edge source="instituicao" target="associacao" id="319" weight="4.0" />
+      <edge source="torna" target="latour" id="320" weight="7.0" />
+      <edge source="torna" target="tecnologia" id="321" weight="3.0" />
+      <edge source="torna" target="tecnico" id="322" weight="8.0" />
+      <edge source="torna" target="rede" id="323" weight="3.0" />
+      <edge source="torna" target="agencia" id="324" weight="4.0" />
+      <edge source="torna" target="distribuida" id="325" weight="6.0" />
+      <edge source="torna" target="ator" id="326" weight="8.0" />
+      <edge source="torna" target="letramento" id="327" weight="4.0" />
+      <edge source="torna" target="pesquisa" id="328" weight="4.0" />
+      <edge source="torna" target="social" id="329" weight="10.0" />
+      <edge source="torna" target="infraestrutura" id="330" weight="4.0" />
+      <edge source="existe" target="parcial" id="331" weight="4.0" />
+      <edge source="existe" target="pesquisador" id="332" weight="8.0" />
+      <edge source="existe" target="modelo" id="333" weight="4.0" />
+      <edge source="existe" target="linguagem" id="334" weight="6.0" />
+      <edge source="existe" target="claude" id="335" weight="30.0" />
+      <edge source="existe" target="treinamento" id="336" weight="6.0" />
+      <edge source="existe" target="pratica" id="337" weight="4.0" />
+      <edge source="existe" target="produzem" id="338" weight="4.0" />
+      <edge source="existe" target="laboratorio" id="339" weight="6.0" />
+      <edge source="existe" target="mundo" id="340" weight="4.0" />
+      <edge source="existe" target="tecnologia" id="341" weight="6.0" />
+      <edge source="sistemas" target="agencia" id="342" weight="4.0" />
+      <edge source="sistemas" target="distribuida" id="343" weight="6.0" />
+      <edge source="sistemas" target="claude" id="344" weight="4.0" />
+      <edge source="sistemas" target="precisamente" id="345" weight="6.0" />
+      <edge source="sistemas" target="sociais" id="346" weight="10.0" />
+      <edge source="sistemas" target="politicas" id="347" weight="6.0" />
+      <edge source="sistemas" target="significa" id="348" weight="4.0" />
+      <edge source="sistemas" target="pesquisa" id="349" weight="4.0" />
+      <edge source="sistemas" target="responsabilidade" id="350" weight="4.0" />
+      <edge source="sistemas" target="computacao" id="351" weight="4.0" />
+      <edge source="sistemas" target="pesquisador" id="352" weight="4.0" />
+      <edge source="campo" target="dado" id="353" weight="5.0" />
+      <edge source="campo" target="metodo" id="354" weight="6.0" />
+      <edge source="campo" target="relacoes" id="355" weight="9.0" />
+      <edge source="campo" target="percurso" id="356" weight="6.0" />
+      <edge source="campo" target="pesquisador" id="357" weight="16.0" />
+      <edge source="campo" target="diagrama" id="358" weight="4.0" />
+      <edge source="campo" target="mundo" id="359" weight="4.0" />
+      <edge source="campo" target="actante" id="360" weight="4.0" />
+      <edge source="campo" target="claude" id="361" weight="12.0" />
+      <edge source="campo" target="pesquisa" id="362" weight="16.0" />
+      <edge source="campo" target="parciais" id="363" weight="4.0" />
+      <edge source="campo" target="inteligencia" id="364" weight="8.0" />
+      <edge source="campo" target="artificial" id="365" weight="6.0" />
+      <edge source="campo" target="laboratorio" id="366" weight="4.0" />
+      <edge source="campo" target="revelou" id="367" weight="10.0" />
+      <edge source="campo" target="licao" id="368" weight="4.0" />
+      <edge source="campo" target="conhecimento" id="369" weight="12.0" />
+      <edge source="campo" target="tecnologia" id="370" weight="10.0" />
+      <edge source="campo" target="teoria" id="371" weight="4.0" />
+      <edge source="campo" target="condicao" id="372" weight="8.0" />
+      <edge source="campo" target="latour" id="373" weight="6.0" />
+      <edge source="campo" target="pratica" id="374" weight="4.0" />
+      <edge source="campo" target="linguagem" id="375" weight="6.0" />
+      <edge source="campo" target="pergunta" id="376" weight="4.0" />
+      <edge source="campo" target="descreve" id="377" weight="4.0" />
+      <edge source="campo" target="parte" id="378" weight="6.0" />
+      <edge source="campo" target="politica" id="379" weight="12.0" />
+      <edge source="treinamento" target="dado" id="380" weight="28.0" />
+      <edge source="treinamento" target="claude" id="381" weight="18.0" />
+      <edge source="treinamento" target="modelo" id="382" weight="10.0" />
+      <edge source="treinamento" target="metodo" id="383" weight="4.0" />
+      <edge source="treinamento" target="spira" id="384" weight="6.0" />
+      <edge source="politicas" target="computacao" id="385" weight="6.0" />
+      <edge source="politicas" target="cientifico" id="386" weight="12.0" />
+      <edge source="politicas" target="metodo" id="387" weight="3.0" />
+      <edge source="politicas" target="infraestrutura" id="388" weight="4.0" />
+      <edge source="politicas" target="acesso" id="389" weight="4.0" />
+      <edge source="politicas" target="sociais" id="390" weight="6.0" />
+      <edge source="politicas" target="modelo" id="391" weight="4.0" />
+      <edge source="licao" target="pergunta" id="392" weight="4.0" />
+      <edge source="licao" target="pesquisa" id="393" weight="16.0" />
+      <edge source="licao" target="conhecimento" id="394" weight="6.0" />
+      <edge source="licao" target="letramento" id="395" weight="4.0" />
+      <edge source="licao" target="pesquisador" id="396" weight="6.0" />
+      <edge source="licao" target="descreve" id="397" weight="4.0" />
+      <edge source="licao" target="politica" id="398" weight="4.0" />
+      <edge source="associacao" target="agencia" id="399" weight="4.0" />
+      <edge source="associacao" target="mundo" id="400" weight="3.0" />
+      <edge source="associacao" target="ator" id="401" weight="7.0" />
+      <edge source="associacao" target="acao" id="402" weight="4.0" />
+      <edge source="associacao" target="tornou" id="403" weight="4.0" />
+      <edge source="associacao" target="actante" id="404" weight="16.0" />
+      <edge source="associacao" target="produzem" id="405" weight="6.0" />
+      <edge source="associacao" target="rede" id="406" weight="12.0" />
+      <edge source="associacao" target="pesquisa" id="407" weight="8.0" />
+      <edge source="associacao" target="social" id="408" weight="4.0" />
+      <edge source="associacao" target="laboratorio" id="409" weight="4.0" />
+      <edge source="associacao" target="cadeia" id="410" weight="6.0" />
+      <edge source="associacao" target="pesquisador" id="411" weight="6.0" />
+      <edge source="actante" target="ontologia" id="412" weight="5.0" />
+      <edge source="actante" target="rede" id="413" weight="10.0" />
+      <edge source="actante" target="agencia" id="414" weight="6.0" />
+      <edge source="actante" target="composicao" id="415" weight="22.0" />
+      <edge source="actante" target="acao" id="416" weight="10.0" />
+      <edge source="actante" target="produzem" id="417" weight="4.0" />
+      <edge source="actante" target="pesquisador" id="418" weight="4.0" />
+      <edge source="actante" target="modelo" id="419" weight="4.0" />
+      <edge source="actante" target="claude" id="420" weight="6.0" />
+      <edge source="actante" target="relacoes" id="421" weight="6.0" />
+      <edge source="actante" target="analise" id="422" weight="4.0" />
+      <edge source="actante" target="pratica" id="423" weight="4.0" />
+      <edge source="actante" target="cadeia" id="424" weight="4.0" />
+      <edge source="actante" target="produz" id="425" weight="6.0" />
+      <edge source="actante" target="termos" id="426" weight="4.0" />
+      <edge source="actante" target="precisamente" id="427" weight="4.0" />
+      <edge source="descreve" target="diagrama" id="428" weight="3.0" />
+      <edge source="descreve" target="rede" id="429" weight="10.0" />
+      <edge source="descreve" target="existencia" id="430" weight="7.0" />
+      <edge source="descreve" target="pratica" id="431" weight="4.0" />
+      <edge source="descreve" target="termos" id="432" weight="3.0" />
+      <edge source="descreve" target="pesquisa" id="433" weight="5.0" />
+      <edge source="descreve" target="latour" id="434" weight="11.0" />
+      <edge source="descreve" target="parcial" id="435" weight="6.0" />
+      <edge source="descreve" target="entidades" id="436" weight="6.0" />
+      <edge source="descreve" target="agencia" id="437" weight="4.0" />
+      <edge source="descreve" target="distribuida" id="438" weight="12.0" />
+      <edge source="descreve" target="composicao" id="439" weight="4.0" />
+      <edge source="descreve" target="faire" id="440" weight="10.0" />
+      <edge source="descreve" target="precisamente" id="441" weight="6.0" />
+      <edge source="existencia" target="diferentes" id="442" weight="6.0" />
+      <edge source="existencia" target="artificial" id="443" weight="4.0" />
+      <edge source="existencia" target="parcial" id="444" weight="64.0" />
+      <edge source="existencia" target="modos" id="445" weight="12.0" />
+      <edge source="existencia" target="ator" id="446" weight="4.0" />
+      <edge source="existencia" target="significa" id="447" weight="6.0" />
+      <edge source="existencia" target="entidades" id="448" weight="8.0" />
+      <edge source="existencia" target="termos" id="449" weight="6.0" />
+      <edge source="existencia" target="existencias" id="450" weight="4.0" />
+      <edge source="existencia" target="parciais" id="451" weight="6.0" />
+      <edge source="existencia" target="centro" id="452" weight="6.0" />
+      <edge source="existencia" target="spira" id="453" weight="4.0" />
+      <edge source="existencia" target="regra" id="454" weight="4.0" />
+      <edge source="existencia" target="metodo" id="455" weight="6.0" />
+      <edge source="existencia" target="descricao" id="456" weight="4.0" />
+      <edge source="metodo" target="politica" id="457" weight="6.0" />
+      <edge source="metodo" target="pratica" id="458" weight="7.0" />
+      <edge source="metodo" target="tecnicas" id="459" weight="7.0" />
+      <edge source="metodo" target="dado" id="460" weight="5.0" />
+      <edge source="metodo" target="descricao" id="461" weight="3.0" />
+      <edge source="metodo" target="pergunta" id="462" weight="3.0" />
+      <edge source="metodo" target="centro" id="463" weight="3.0" />
+      <edge source="metodo" target="parte" id="464" weight="8.0" />
+      <edge source="metodo" target="claude" id="465" weight="6.0" />
+      <edge source="metodo" target="composicao" id="466" weight="4.0" />
+      <edge source="metodo" target="latour" id="467" weight="4.0" />
+      <edge source="metodo" target="regra" id="468" weight="24.0" />
+      <edge source="metodo" target="inscricao" id="469" weight="4.0" />
+      <edge source="metodo" target="tecnociencia" id="470" weight="6.0" />
+      <edge source="metodo" target="simetria" id="471" weight="16.0" />
+      <edge source="metodo" target="existencias" id="472" weight="6.0" />
+      <edge source="metodo" target="parciais" id="473" weight="4.0" />
+      <edge source="metodo" target="pesquisa" id="474" weight="4.0" />
+      <edge source="metodo" target="revelou" id="475" weight="6.0" />
+      <edge source="metodo" target="teoria" id="476" weight="4.0" />
+      <edge source="metodo" target="parcial" id="477" weight="4.0" />
+      <edge source="tecnico" target="spira" id="478" weight="16.0" />
+      <edge source="tecnico" target="pesquisa" id="479" weight="8.0" />
+      <edge source="tecnico" target="termos" id="480" weight="4.0" />
+      <edge source="tecnico" target="letramento" id="481" weight="80.0" />
+      <edge source="tecnico" target="condicao" id="482" weight="10.0" />
+      <edge source="tecnico" target="social" id="483" weight="16.0" />
+      <edge source="tecnico" target="rede" id="484" weight="4.0" />
+      <edge source="tecnico" target="conhecimento" id="485" weight="22.0" />
+      <edge source="tecnico" target="inteligencia" id="486" weight="8.0" />
+      <edge source="tecnico" target="artificial" id="487" weight="12.0" />
+      <edge source="tecnico" target="centro" id="488" weight="4.0" />
+      <edge source="tecnico" target="sociais" id="489" weight="6.0" />
+      <edge source="parte" target="pesquisa" id="490" weight="3.0" />
+      <edge source="parte" target="percurso" id="491" weight="6.0" />
+      <edge source="parte" target="composicao" id="492" weight="30.0" />
+      <edge source="parte" target="claude" id="493" weight="36.0" />
+      <edge source="parte" target="escrita" id="494" weight="42.0" />
+      <edge source="parte" target="pesquisador" id="495" weight="16.0" />
+      <edge source="parte" target="modelo" id="496" weight="8.0" />
+      <edge source="parte" target="acesso" id="497" weight="4.0" />
+      <edge source="parte" target="rede" id="498" weight="8.0" />
+      <edge source="parte" target="analise" id="499" weight="6.0" />
+      <edge source="parte" target="precisamente" id="500" weight="4.0" />
+      <edge source="relacoes" target="entidades" id="501" weight="3.0" />
+      <edge source="relacoes" target="significa" id="502" weight="4.0" />
+      <edge source="relacoes" target="inscricao" id="503" weight="4.0" />
+      <edge source="relacoes" target="modelo" id="504" weight="10.0" />
+      <edge source="relacoes" target="diagrama" id="505" weight="4.0" />
+      <edge source="relacoes" target="rede" id="506" weight="6.0" />
+      <edge source="relacoes" target="revelou" id="507" weight="6.0" />
+      <edge source="relacoes" target="conhecimento" id="508" weight="4.0" />
+      <edge source="modos" target="inteligencia" id="509" weight="6.0" />
+      <edge source="modos" target="composicao" id="510" weight="4.0" />
+      <edge source="modos" target="tecnicas" id="511" weight="4.0" />
+      <edge source="modos" target="conhecimento" id="512" weight="6.0" />
+      <edge source="modos" target="diferentes" id="513" weight="10.0" />
+      <edge source="modos" target="produzem" id="514" weight="4.0" />
+      <edge source="modos" target="relacao" id="515" weight="4.0" />
+      <edge source="modos" target="colaboracao" id="516" weight="4.0" />
+      <edge source="teoria" target="ator" id="517" weight="60.0" />
+      <edge source="teoria" target="rede" id="518" weight="40.0" />
+      <edge source="teoria" target="cadeia" id="519" weight="4.0" />
+      <edge source="teoria" target="simetria" id="520" weight="8.0" />
+      <edge source="teoria" target="existencias" id="521" weight="4.0" />
+      <edge source="teoria" target="letramento" id="522" weight="6.0" />
+      <edge source="tecnologia" target="mundo" id="523" weight="3.0" />
+      <edge source="tecnologia" target="pergunta" id="524" weight="3.0" />
+      <edge source="tecnologia" target="ontologia" id="525" weight="3.0" />
+      <edge source="tecnologia" target="descricao" id="526" weight="3.0" />
+      <edge source="tecnologia" target="cientifico" id="527" weight="3.0" />
+      <edge source="tecnologia" target="conhecimento" id="528" weight="4.0" />
+      <edge source="tecnologia" target="colaboracao" id="529" weight="6.0" />
+      <edge source="tecnologia" target="escrita" id="530" weight="4.0" />
+      <edge source="tecnologia" target="trata" id="531" weight="6.0" />
+      <edge source="escrita" target="linguagem" id="532" weight="4.0" />
+      <edge source="escrita" target="agencia" id="533" weight="4.0" />
+      <edge source="escrita" target="claude" id="534" weight="74.0" />
+      <edge source="escrita" target="revelou" id="535" weight="6.0" />
+      <edge source="escrita" target="tornou" id="536" weight="6.0" />
+      <edge source="escrita" target="pratica" id="537" weight="6.0" />
+      <edge source="escrita" target="diagrama" id="538" weight="4.0" />
+      <edge source="escrita" target="composicao" id="539" weight="45.0" />
+      <edge source="escrita" target="pesquisador" id="540" weight="4.0" />
+      <edge source="escrita" target="modelo" id="541" weight="4.0" />
+      <edge source="escrita" target="relacao" id="542" weight="6.0" />
+      <edge source="escrita" target="colaboracao" id="543" weight="6.0" />
+      <edge source="cientifico" target="conhecimento" id="544" weight="3.0" />
+      <edge source="cientifico" target="infraestrutura" id="545" weight="3.0" />
+      <edge source="cientifico" target="computacao" id="546" weight="4.0" />
+      <edge source="cientifico" target="pesquisa" id="547" weight="5.0" />
+      <edge source="cientifico" target="inscricao" id="548" weight="12.0" />
+      <edge source="cientifico" target="dado" id="549" weight="3.0" />
+      <edge source="cientifico" target="colaboracao" id="550" weight="6.0" />
+      <edge source="cientifico" target="politica" id="551" weight="6.0" />
+      <edge source="cientifico" target="rede" id="552" weight="6.0" />
+      <edge source="conhecimento" target="significa" id="553" weight="4.0" />
+      <edge source="conhecimento" target="sociais" id="554" weight="8.0" />
+      <edge source="conhecimento" target="produz" id="555" weight="8.0" />
+      <edge source="conhecimento" target="condicao" id="556" weight="4.0" />
+      <edge source="conhecimento" target="acesso" id="557" weight="6.0" />
+      <edge source="conhecimento" target="pesquisa" id="558" weight="8.0" />
+      <edge source="conhecimento" target="diferentes" id="559" weight="6.0" />
+      <edge source="conhecimento" target="inteligencia" id="560" weight="10.0" />
+      <edge source="conhecimento" target="artificial" id="561" weight="8.0" />
+      <edge source="parcial" target="rede" id="562" weight="3.0" />
+      <edge source="parcial" target="agencia" id="563" weight="8.0" />
+      <edge source="parcial" target="distribuida" id="564" weight="4.0" />
+      <edge source="parcial" target="entidades" id="565" weight="6.0" />
+      <edge source="parcial" target="significa" id="566" weight="4.0" />
+      <edge source="parcial" target="composicao" id="567" weight="6.0" />
+      <edge source="parcial" target="pesquisador" id="568" weight="6.0" />
+      <edge source="parcial" target="termos" id="569" weight="4.0" />
+      <edge source="parcial" target="parciais" id="570" weight="4.0" />
+      <edge source="parcial" target="descricao" id="571" weight="6.0" />
+      <edge source="pratica" target="pesquisa" id="572" weight="22.0" />
+      <edge source="pratica" target="tecnicas" id="573" weight="18.0" />
+      <edge source="pratica" target="rede" id="574" weight="5.0" />
+      <edge source="pratica" target="diferentes" id="575" weight="4.0" />
+      <edge source="pratica" target="pergunta" id="576" weight="8.0" />
+      <edge source="pratica" target="produzem" id="577" weight="9.0" />
+      <edge source="pratica" target="descricao" id="578" weight="3.0" />
+      <edge source="pratica" target="termos" id="579" weight="3.0" />
+      <edge source="pratica" target="claude" id="580" weight="10.0" />
+      <edge source="pratica" target="composicao" id="581" weight="6.0" />
+      <edge source="pratica" target="cadeia" id="582" weight="6.0" />
+      <edge source="pratica" target="tecnociencia" id="583" weight="12.0" />
+      <edge source="pratica" target="inteligencia" id="584" weight="8.0" />
+      <edge source="pratica" target="artificial" id="585" weight="4.0" />
+      <edge source="pratica" target="precisamente" id="586" weight="4.0" />
+      <edge source="sociais" target="significa" id="587" weight="8.0" />
+      <edge source="sociais" target="dado" id="588" weight="10.0" />
+      <edge source="sociais" target="condicao" id="589" weight="6.0" />
+      <edge source="sociais" target="analise" id="590" weight="4.0" />
+      <edge source="sociais" target="condicoes" id="591" weight="6.0" />
+      <edge source="sociais" target="inteligencia" id="592" weight="6.0" />
+      <edge source="sociais" target="computacao" id="593" weight="4.0" />
+      <edge source="sociais" target="letramento" id="594" weight="6.0" />
+      <edge source="spira" target="cadeia" id="595" weight="6.0" />
+      <edge source="spira" target="composicao" id="596" weight="4.0" />
+      <edge source="spira" target="rede" id="597" weight="4.0" />
+      <edge source="spira" target="centro" id="598" weight="6.0" />
+      <edge source="spira" target="modelo" id="599" weight="6.0" />
+      <edge source="spira" target="laboratorio" id="600" weight="4.0" />
+      <edge source="regra" target="claude" id="601" weight="6.0" />
+      <edge source="regra" target="simetria" id="602" weight="8.0" />
+      <edge source="regra" target="latour" id="603" weight="20.0" />
+      <edge source="regra" target="pesquisa" id="604" weight="6.0" />
+      <edge source="regra" target="revelou" id="605" weight="4.0" />
+      <edge source="entidades" target="existencias" id="606" weight="10.0" />
+      <edge source="entidades" target="modelo" id="607" weight="4.0" />
+      <edge source="entidades" target="parciais" id="608" weight="6.0" />
+      <edge source="inteligencia" target="artificial" id="609" weight="185.0" />
+      <edge source="inteligencia" target="centro" id="610" weight="9.0" />
+      <edge source="inteligencia" target="vocabulario" id="611" weight="4.0" />
+      <edge source="inteligencia" target="composicao" id="612" weight="12.0" />
+      <edge source="inteligencia" target="colaboracao" id="613" weight="6.0" />
+      <edge source="inteligencia" target="pesquisa" id="614" weight="26.0" />
+      <edge source="inteligencia" target="claude" id="615" weight="4.0" />
+      <edge source="inteligencia" target="pesquisador" id="616" weight="6.0" />
+      <edge source="inteligencia" target="tecnociencia" id="617" weight="6.0" />
+      <edge source="inteligencia" target="letramento" id="618" weight="6.0" />
+      <edge source="laboratorio" target="pesquisa" id="619" weight="13.0" />
+      <edge source="laboratorio" target="pesquisador" id="620" weight="14.0" />
+      <edge source="laboratorio" target="tecnociencia" id="621" weight="4.0" />
+      <edge source="laboratorio" target="inscricao" id="622" weight="6.0" />
+      <edge source="laboratorio" target="significa" id="623" weight="4.0" />
+      <edge source="laboratorio" target="centro" id="624" weight="6.0" />
+      <edge source="laboratorio" target="computacao" id="625" weight="10.0" />
+      <edge source="tornou" target="relacao" id="626" weight="5.0" />
+      <edge source="tornou" target="rede" id="627" weight="4.0" />
+      <edge source="tornou" target="agencia" id="628" weight="4.0" />
+      <edge source="tornou" target="revelou" id="629" weight="4.0" />
+      <edge source="tornou" target="descricao" id="630" weight="4.0" />
+      <edge source="tornou" target="existencias" id="631" weight="4.0" />
+      <edge source="tornou" target="parciais" id="632" weight="6.0" />
+      <edge source="diferentes" target="centro" id="633" weight="3.0" />
+      <edge source="diferentes" target="rede" id="634" weight="5.0" />
+      <edge source="diferentes" target="produzem" id="635" weight="13.0" />
+      <edge source="diferentes" target="ontologia" id="636" weight="4.0" />
+      <edge source="social" target="politica" id="637" weight="6.0" />
+      <edge source="social" target="pesquisa" id="638" weight="6.0" />
+      <edge source="social" target="linguagem" id="639" weight="4.0" />
+      <edge source="social" target="mundo" id="640" weight="6.0" />
+      <edge source="social" target="computacao" id="641" weight="4.0" />
+      <edge source="social" target="pesquisador" id="642" weight="4.0" />
+      <edge source="social" target="letramento" id="643" weight="4.0" />
+      <edge source="social" target="colaboracao" id="644" weight="6.0" />
+      <edge source="parciais" target="existencias" id="645" weight="84.0" />
+      <edge source="parciais" target="simetria" id="646" weight="10.0" />
+      <edge source="parciais" target="pesquisa" id="647" weight="4.0" />
+      <edge source="parciais" target="vocabulario" id="648" weight="4.0" />
+      <edge source="parciais" target="modelo" id="649" weight="4.0" />
+      <edge source="acesso" target="pesquisa" id="650" weight="8.0" />
+      <edge source="acesso" target="dado" id="651" weight="3.0" />
+      <edge source="acesso" target="analise" id="652" weight="3.0" />
+      <edge source="acesso" target="claude" id="653" weight="6.0" />
+      <edge source="acesso" target="condicoes" id="654" weight="10.0" />
+      <edge source="acesso" target="modelo" id="655" weight="6.0" />
+      <edge source="acesso" target="diagrama" id="656" weight="6.0" />
+      <edge source="acesso" target="colaboracao" id="657" weight="4.0" />
+      <edge source="acesso" target="percurso" id="658" weight="6.0" />
+      <edge source="acesso" target="tecnicas" id="659" weight="4.0" />
+      <edge source="existencias" target="simetria" id="660" weight="16.0" />
+      <edge source="existencias" target="agencia" id="661" weight="4.0" />
+      <edge source="existencias" target="latour" id="662" weight="4.0" />
+      <edge source="existencias" target="vocabulario" id="663" weight="6.0" />
+      <edge source="rede" target="centro" id="664" weight="22.0" />
+      <edge source="rede" target="descricao" id="665" weight="4.0" />
+      <edge source="rede" target="pesquisa" id="666" weight="9.0" />
+      <edge source="rede" target="inscricao" id="667" weight="3.0" />
+      <edge source="rede" target="latour" id="668" weight="4.0" />
+      <edge source="rede" target="ator" id="669" weight="78.0" />
+      <edge source="rede" target="composicao" id="670" weight="10.0" />
+      <edge source="rede" target="acao" id="671" weight="6.0" />
+      <edge source="rede" target="faire" id="672" weight="6.0" />
+      <edge source="rede" target="agencia" id="673" weight="22.0" />
+      <edge source="rede" target="distribuida" id="674" weight="16.0" />
+      <edge source="rede" target="letramento" id="675" weight="4.0" />
+      <edge source="rede" target="tecnociencia" id="676" weight="18.0" />
+      <edge source="rede" target="cadeia" id="677" weight="8.0" />
+      <edge source="rede" target="colaboracao" id="678" weight="6.0" />
+      <edge source="rede" target="pesquisador" id="679" weight="24.0" />
+      <edge source="artificial" target="centro" id="680" weight="6.0" />
+      <edge source="artificial" target="composicao" id="681" weight="4.0" />
+      <edge source="artificial" target="vocabulario" id="682" weight="4.0" />
+      <edge source="artificial" target="pesquisa" id="683" weight="22.0" />
+      <edge source="artificial" target="colaboracao" id="684" weight="4.0" />
+      <edge source="artificial" target="tecnociencia" id="685" weight="4.0" />
+      <edge source="artificial" target="letramento" id="686" weight="10.0" />
+      <edge source="linguagem" target="pesquisa" id="687" weight="4.0" />
+      <edge source="linguagem" target="modelo" id="688" weight="84.0" />
+      <edge source="linguagem" target="pesquisador" id="689" weight="8.0" />
+      <edge source="linguagem" target="composicao" id="690" weight="6.0" />
+      <edge source="linguagem" target="claude" id="691" weight="4.0" />
+      <edge source="linguagem" target="colaboracao" id="692" weight="4.0" />
+      <edge source="linguagem" target="dado" id="693" weight="8.0" />
+      <edge source="linguagem" target="analise" id="694" weight="4.0" />
+      <edge source="condicao" target="mundo" id="695" weight="6.0" />
+      <edge source="condicao" target="ontologia" id="696" weight="12.0" />
+      <edge source="condicao" target="pesquisador" id="697" weight="4.0" />
+      <edge source="condicao" target="modelo" id="698" weight="8.0" />
+      <edge source="condicao" target="analise" id="699" weight="6.0" />
+      <edge source="condicao" target="composicao" id="700" weight="4.0" />
+      <edge source="condicao" target="produz" id="701" weight="6.0" />
+      <edge source="condicao" target="diagrama" id="702" weight="4.0" />
+      <edge source="condicao" target="simetria" id="703" weight="4.0" />
+      <edge source="simetria" target="descricao" id="704" weight="4.0" />
+      <edge source="simetria" target="vocabulario" id="705" weight="10.0" />
+      <edge source="simetria" target="latour" id="706" weight="10.0" />
+      <edge source="composicao" target="revelou" id="707" weight="5.0" />
+      <edge source="composicao" target="mundo" id="708" weight="4.0" />
+      <edge source="composicao" target="pesquisador" id="709" weight="18.0" />
+      <edge source="composicao" target="produz" id="710" weight="18.0" />
+      <edge source="composicao" target="distribuida" id="711" weight="4.0" />
+      <edge source="composicao" target="vocabulario" id="712" weight="6.0" />
+      <edge source="composicao" target="modelo" id="713" weight="14.0" />
+      <edge source="composicao" target="claude" id="714" weight="65.0" />
+      <edge source="composicao" target="agencia" id="715" weight="4.0" />
+      <edge source="composicao" target="cadeia" id="716" weight="4.0" />
+      <edge source="composicao" target="faire" id="717" weight="6.0" />
+      <edge source="composicao" target="dado" id="718" weight="4.0" />
+      <edge source="composicao" target="precisamente" id="719" weight="4.0" />
+      <edge source="composicao" target="pesquisa" id="720" weight="6.0" />
+      <edge source="trata" target="termos" id="721" weight="4.0" />
+      <edge source="trata" target="colaboracao" id="722" weight="6.0" />
+      <edge source="trata" target="pesquisa" id="723" weight="6.0" />
+      <edge source="trata" target="condicoes" id="724" weight="6.0" />
+      <edge source="pesquisador" target="diagrama" id="725" weight="6.0" />
+      <edge source="pesquisador" target="centro" id="726" weight="7.0" />
+      <edge source="pesquisador" target="ontologia" id="727" weight="6.0" />
+      <edge source="pesquisador" target="modelo" id="728" weight="56.0" />
+      <edge source="pesquisador" target="distribuida" id="729" weight="8.0" />
+      <edge source="pesquisador" target="cadeia" id="730" weight="4.0" />
+      <edge source="pesquisador" target="relacao" id="731" weight="10.0" />
+      <edge source="pesquisador" target="claude" id="732" weight="26.0" />
+      <edge source="pesquisador" target="colaboracao" id="733" weight="6.0" />
+      <edge source="pesquisador" target="vocabulario" id="734" weight="4.0" />
+      <edge source="pesquisador" target="revelou" id="735" weight="4.0" />
+      <edge source="pesquisador" target="termos" id="736" weight="12.0" />
+      <edge source="pesquisador" target="letramento" id="737" weight="8.0" />
+      <edge source="pesquisador" target="infraestrutura" id="738" weight="4.0" />
+      <edge source="condicoes" target="claude" id="739" weight="6.0" />
+      <edge source="condicoes" target="termos" id="740" weight="6.0" />
+      <edge source="condicoes" target="pesquisa" id="741" weight="12.0" />
+      <edge source="mundo" target="latour" id="742" weight="4.0" />
+      <edge source="mundo" target="pergunta" id="743" weight="7.0" />
+      <edge source="mundo" target="inscricao" id="744" weight="3.0" />
+      <edge source="mundo" target="produz" id="745" weight="4.0" />
+      <edge source="mundo" target="produzem" id="746" weight="4.0" />
+      <edge source="distribuida" target="agencia" id="747" weight="58.0" />
+      <edge source="distribuida" target="latour" id="748" weight="6.0" />
+      <edge source="distribuida" target="cadeia" id="749" weight="12.0" />
+      <edge source="distribuida" target="responsabilidade" id="750" weight="4.0" />
+      <edge source="analise" target="dado" id="751" weight="18.0" />
+      <edge source="analise" target="diagrama" id="752" weight="4.0" />
+      <edge source="politica" target="pesquisa" id="753" weight="6.0" />
+      <edge source="faire" target="responsabilidade" id="754" weight="6.0" />
+      <edge source="faire" target="acao" id="755" weight="20.0" />
+      <edge source="faire" target="latour" id="756" weight="6.0" />
+      <edge source="faire" target="agencia" id="757" weight="10.0" />
+      <edge source="faire" target="diagrama" id="758" weight="6.0" />
+      <edge source="latour" target="acao" id="759" weight="14.0" />
+      <edge source="latour" target="pesquisa" id="760" weight="9.0" />
+      <edge source="latour" target="pergunta" id="761" weight="3.0" />
+      <edge source="latour" target="agencia" id="762" weight="12.0" />
+      <edge source="latour" target="vocabulario" id="763" weight="6.0" />
+      <edge source="latour" target="modelo" id="764" weight="4.0" />
+      <edge source="latour" target="precisamente" id="765" weight="4.0" />
+      <edge source="produz" target="descricao" id="766" weight="3.0" />
+      <edge source="produz" target="cadeia" id="767" weight="4.0" />
+      <edge source="produz" target="diagrama" id="768" weight="12.0" />
+      <edge source="revelou" target="pesquisa" id="769" weight="16.0" />
+      <edge source="revelou" target="percurso" id="770" weight="8.0" />
+      <edge source="revelou" target="vocabulario" id="771" weight="4.0" />
+      <edge source="revelou" target="letramento" id="772" weight="4.0" />
+      <edge source="letramento" target="termos" id="773" weight="6.0" />
+      <edge source="letramento" target="ator" id="774" weight="4.0" />
+      <edge source="inscricao" target="pesquisa" id="775" weight="7.0" />
+      <edge source="inscricao" target="diagrama" id="776" weight="12.0" />
+      <edge source="inscricao" target="colaboracao" id="777" weight="6.0" />
+      <edge source="inscricao" target="agencia" id="778" weight="4.0" />
+      <edge source="modelo" target="dado" id="779" weight="14.0" />
+      <edge source="modelo" target="tecnicas" id="780" weight="4.0" />
+      <edge source="modelo" target="ontologia" id="781" weight="4.0" />
+      <edge source="modelo" target="diagrama" id="782" weight="6.0" />
+      <edge source="modelo" target="claude" id="783" weight="32.0" />
+      <edge source="modelo" target="relacao" id="784" weight="4.0" />
+      <edge source="modelo" target="termos" id="785" weight="8.0" />
+      <edge source="modelo" target="pesquisa" id="786" weight="8.0" />
+      <edge source="modelo" target="colaboracao" id="787" weight="6.0" />
+      <edge source="modelo" target="infraestrutura" id="788" weight="8.0" />
+      <edge source="modelo" target="computacao" id="789" weight="4.0" />
+      <edge source="vocabulario" target="relacao" id="790" weight="8.0" />
+      <edge source="vocabulario" target="descricao" id="791" weight="6.0" />
+      <edge source="vocabulario" target="agencia" id="792" weight="4.0" />
+      <edge source="vocabulario" target="pesquisa" id="793" weight="8.0" />
+      <edge source="vocabulario" target="termos" id="794" weight="6.0" />
+      <edge source="vocabulario" target="ontologia" id="795" weight="4.0" />
+      <edge source="vocabulario" target="tecnicas" id="796" weight="6.0" />
+      <edge source="ontologia" target="pergunta" id="797" weight="3.0" />
+      <edge source="ontologia" target="claude" id="798" weight="6.0" />
+      <edge source="precisamente" target="claude" id="799" weight="10.0" />
+      <edge source="precisamente" target="pergunta" id="800" weight="6.0" />
+      <edge source="percurso" target="colaboracao" id="801" weight="6.0" />
+      <edge source="percurso" target="termos" id="802" weight="6.0" />
+      <edge source="percurso" target="pesquisa" id="803" weight="16.0" />
+      <edge source="diagrama" target="colaboracao" id="804" weight="4.0" />
+      <edge source="diagrama" target="agencia" id="805" weight="6.0" />
+      <edge source="diagrama" target="acao" id="806" weight="6.0" />
+      <edge source="diagrama" target="computacao" id="807" weight="4.0" />
+      <edge source="claude" target="produzem" id="808" weight="6.0" />
+      <edge source="claude" target="dado" id="809" weight="4.0" />
+      <edge source="claude" target="pergunta" id="810" weight="4.0" />
+      <edge source="claude" target="colaboracao" id="811" weight="20.0" />
+      <edge source="claude" target="agencia" id="812" weight="4.0" />
+      <edge source="claude" target="pesquisa" id="813" weight="4.0" />
+      <edge source="produzem" target="responsabilidade" id="814" weight="4.0" />
+      <edge source="produzem" target="acao" id="815" weight="6.0" />
+      <edge source="produzem" target="termos" id="816" weight="6.0" />
+      <edge source="produzem" target="pesquisa" id="817" weight="6.0" />
+      <edge source="agencia" target="cadeia" id="818" weight="14.0" />
+      <edge source="agencia" target="responsabilidade" id="819" weight="6.0" />
+      <edge source="tecnicas" target="pesquisa" id="820" weight="4.0" />
+      <edge source="tecnociencia" target="centro" id="821" weight="6.0" />
+      <edge source="pergunta" target="pesquisa" id="822" weight="16.0" />
+      <edge source="pergunta" target="dado" id="823" weight="6.0" />
+      <edge source="pergunta" target="computacao" id="824" weight="10.0" />
+      <edge source="dado" target="pesquisa" id="825" weight="6.0" />
+      <edge source="relacao" target="descricao" id="826" weight="4.0" />
+      <edge source="relacao" target="termos" id="827" weight="6.0" />
+      <edge source="descricao" target="cadeia" id="828" weight="4.0" />
+      <edge source="acao" target="responsabilidade" id="829" weight="18.0" />
+      <edge source="colaboracao" target="pesquisa" id="830" weight="6.0" />
+      <edge source="colaboracao" target="centro" id="831" weight="4.0" />
+      <edge source="centro" target="pesquisa" id="832" weight="26.0" />
+      <edge source="infraestrutura" target="pesquisa" id="833" weight="4.0" />
+      <edge source="pesquisa" target="significa" id="834" weight="6.0" />
+    </edges>
+  </graph>
+</gexf>
