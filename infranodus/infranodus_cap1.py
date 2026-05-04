@@ -427,6 +427,47 @@ def build_graph(tokens: list[str], window: int = 4) -> nx.Graph:
     return G
 
 
+def compute_npmi(tokens: list[str], window: int = 4) -> dict[tuple[str, str], float]:
+    """Normalized Pointwise Mutual Information for each co-occurring pair.
+
+    NPMI(a,b) = PMI(a,b) / -log p(a,b), where probabilities are estimated
+    over sliding windows of size `window`. Range: [-1, 1]. NPMI > 0 means
+    the pair co-occurs more often than expected by chance; NPMI close to 1
+    means near-perfect association. Rare-but-distinctive pairs surface here
+    even when their raw co-occurrence count is small.
+    """
+    from math import log
+
+    n_windows = max(1, len(tokens) - window + 1)
+    occur: Counter = Counter()
+    co: Counter = Counter()
+    for i in range(n_windows):
+        w_set = set(tokens[i:i + window])
+        for t in w_set:
+            occur[t] += 1
+        for a, b in combinations(sorted(w_set), 2):
+            co[(a, b)] += 1
+
+    npmi: dict[tuple[str, str], float] = {}
+    for (a, b), c in co.items():
+        p_ab = c / n_windows
+        p_a = occur[a] / n_windows
+        p_b = occur[b] / n_windows
+        if p_ab <= 0 or p_a <= 0 or p_b <= 0:
+            continue
+        pmi = log(p_ab / (p_a * p_b))
+        denom = -log(p_ab)
+        npmi[(a, b)] = pmi / denom if denom > 0 else 0.0
+    return npmi
+
+
+def annotate_npmi(G: nx.Graph, npmi: dict[tuple[str, str], float]) -> None:
+    """Attach NPMI to each edge as attribute `npmi` (defaults to 0 if absent)."""
+    for u, v in G.edges():
+        key = (u, v) if u < v else (v, u)
+        G[u][v]["npmi"] = float(npmi.get(key, 0.0))
+
+
 # ---------------------------------------------------------------------------
 # 3. Pruning + metrics
 # ---------------------------------------------------------------------------
@@ -448,7 +489,8 @@ def prune_graph(G: nx.Graph, top_n: int = 200, min_edge_weight: int = 2) -> nx.G
 def compute_metrics(G: nx.Graph):
     deg = dict(G.degree(weight="weight"))
     btw = nx.betweenness_centrality(G, weight=lambda u, v, d: 1.0 / d["weight"], normalized=True)
-    return deg, btw
+    pr = nx.pagerank(G, weight="weight", alpha=0.85, max_iter=500, tol=1e-8)
+    return deg, btw, pr
 
 
 def detect_topics(G: nx.Graph, seed: int = 7) -> list[set[str]]:
@@ -502,8 +544,8 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
     node_sizes = [80 + 700 * (deg[n] / max_deg) for n in G.nodes()]
 
     fig, ax = plt.subplots(figsize=(18, 14))
-    ax.set_facecolor("#0e1116")
-    fig.patch.set_facecolor("#0e1116")
+    ax.set_facecolor("#ffffff")
+    fig.patch.set_facecolor("#ffffff")
 
     # Edges
     weights = np.array([d["weight"] for _, _, d in G.edges(data=True)], dtype=float)
@@ -511,16 +553,135 @@ def render_network(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
         ew = 0.15 + 1.6 * (weights / weights.max())
     else:
         ew = []
-    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.25, width=ew, edge_color="#9aa4b2")
+    nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.35, width=ew, edge_color="#5a6470")
     nx.draw_networkx_nodes(G, pos, ax=ax, node_color=node_colors,
-                           node_size=node_sizes, linewidths=0.4, edgecolors="#e6e9ef")
+                           node_size=node_sizes, linewidths=0.4, edgecolors="#1a1d22")
 
     top_label_nodes = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:label_top]
     labels = {n: n for n, _ in top_label_nodes}
     nx.draw_networkx_labels(G, pos, labels=labels, font_size=9,
-                            font_color="#f5f7fa", font_weight="bold", ax=ax)
+                            font_color="#0e1116", font_weight="bold", ax=ax)
 
-    ax.set_title(title, color="#f5f7fa", fontsize=16, pad=14)
+    ax.set_title(title, color="#0e1116", fontsize=16, pad=14)
+    ax.axis("off")
+    fig.tight_layout()
+    fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
+# 5b. Gephi export (GEXF + CSV)
+# ---------------------------------------------------------------------------
+
+def export_for_gephi(G: nx.Graph, comms: list[set[str]], deg: dict[str, float],
+                     btw: dict[str, float], stem: Path,
+                     pr: dict[str, float] | None = None):
+    """Write GEXF with viz attributes (color/size by community/degree) plus
+    nodes.csv and edges.csv that Gephi imports without configuration.
+
+    When `pr` (PageRank) is provided, it is added as a node attribute alongside
+    the existing ones so that Gephi users can switch the size/color ranking
+    without changing the file. Edge attribute `npmi` is propagated when present.
+    """
+    node2comm: dict[str, int] = {}
+    for i, c in enumerate(comms):
+        for n in c:
+            node2comm[n] = i
+
+    palette = (plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1))) * 255).astype(int)
+    max_deg = max(deg.values()) or 1
+    pr = pr or {}
+
+    H = nx.Graph()
+    for n in G.nodes():
+        cid = node2comm.get(n, 0)
+        r, g, b = palette[cid % len(palette)][:3]
+        size = 8.0 + 60.0 * (deg[n] / max_deg)
+        H.add_node(
+            n,
+            label=n,
+            community=int(cid),
+            frequency=int(G.nodes[n].get("freq", 0)),
+            degree_weighted=float(deg[n]),
+            betweenness=float(btw.get(n, 0.0)),
+            pagerank=float(pr.get(n, 0.0)),
+            viz={
+                "color": {"r": int(r), "g": int(g), "b": int(b), "a": 1.0},
+                "size": float(size),
+            },
+        )
+    for u, v, d in G.edges(data=True):
+        H.add_edge(u, v, weight=float(d["weight"]),
+                   npmi=float(d.get("npmi", 0.0)))
+
+    gexf_path = stem.with_suffix(".gexf")
+    nx.write_gexf(H, gexf_path)
+
+    # CSVs as a fallback (Gephi → File → Import spreadsheet)
+    nodes_csv = stem.parent / (stem.name + "_nodes.csv")
+    edges_csv = stem.parent / (stem.name + "_edges.csv")
+    with nodes_csv.open("w", encoding="utf-8") as f:
+        f.write("Id,Label,community,frequency,degree_weighted,betweenness,pagerank\n")
+        for n, data in H.nodes(data=True):
+            f.write(f'{n},{n},{data["community"]},{data["frequency"]},'
+                    f'{data["degree_weighted"]:.4f},{data["betweenness"]:.6f},'
+                    f'{data["pagerank"]:.6f}\n')
+    with edges_csv.open("w", encoding="utf-8") as f:
+        f.write("Source,Target,Type,Weight,npmi\n")
+        for u, v, d in H.edges(data=True):
+            f.write(f'{u},{v},Undirected,{d["weight"]:.2f},{d["npmi"]:.4f}\n')
+
+    return gexf_path, nodes_csv, edges_csv
+
+
+def render_network_pmi(G: nx.Graph, comms: list[set[str]], pr: dict[str, float],
+                       path: Path, title: str, npmi_threshold: float = 0.20,
+                       label_top: int = 50):
+    """Alternative rendering: node size by PageRank, edges kept only when
+    NPMI ≥ threshold. Surfaces *informative* terms over merely frequent ones.
+    """
+    H = G.copy()
+    H.remove_edges_from([(u, v) for u, v, d in H.edges(data=True)
+                         if d.get("npmi", 0.0) < npmi_threshold])
+    H.remove_nodes_from(list(nx.isolates(H)))
+    if H.number_of_nodes() == 0:
+        return
+
+    pos = nx.spring_layout(H, weight="weight", seed=11,
+                            k=1.4 / np.sqrt(max(H.number_of_nodes(), 1)),
+                            iterations=200)
+    node2comm: dict[str, int] = {}
+    for i, c in enumerate(comms):
+        for n in c:
+            node2comm[n] = i
+    palette = plt.cm.tab10(np.linspace(0, 1, max(len(comms), 1)))
+    node_colors = [palette[node2comm.get(n, 0) % len(palette)] for n in H.nodes()]
+
+    pr_local = {n: pr.get(n, 0.0) for n in H.nodes()}
+    max_pr = max(pr_local.values()) or 1.0
+    node_sizes = [80 + 1100 * (pr_local[n] / max_pr) for n in H.nodes()]
+
+    fig, ax = plt.subplots(figsize=(18, 14))
+    ax.set_facecolor("#ffffff")
+    fig.patch.set_facecolor("#ffffff")
+
+    npmis = np.array([d.get("npmi", 0.0) for _, _, d in H.edges(data=True)], dtype=float)
+    if len(npmis):
+        npmis_n = (npmis - npmis.min()) / max(npmis.max() - npmis.min(), 1e-9)
+        ew = 0.3 + 1.6 * npmis_n
+    else:
+        ew = []
+    nx.draw_networkx_edges(H, pos, ax=ax, alpha=0.45, width=ew, edge_color="#5a6470")
+    nx.draw_networkx_nodes(H, pos, ax=ax, node_color=node_colors,
+                           node_size=node_sizes, linewidths=0.4, edgecolors="#1a1d22")
+
+    top_label_nodes = sorted(pr_local.items(), key=lambda x: x[1], reverse=True)[:label_top]
+    labels = {n: n for n, _ in top_label_nodes}
+    nx.draw_networkx_labels(H, pos, labels=labels, font_size=9,
+                            font_color="#0e1116", font_weight="bold", ax=ax)
+
+    subtitle = f"\n(tamanho = PageRank · arestas com NPMI ≥ {npmi_threshold:.2f})"
+    ax.set_title(title + subtitle, color="#0e1116", fontsize=15, pad=14)
     ax.axis("off")
     fig.tight_layout()
     fig.savefig(path, dpi=160, facecolor=fig.get_facecolor())
@@ -539,10 +700,16 @@ def main():
     G_full = build_graph(tokens, window=4)
     print(f"    Full graph: {G_full.number_of_nodes()} nodes, {G_full.number_of_edges()} edges")
 
+    npmi_full = compute_npmi(tokens, window=4)
+    annotate_npmi(G_full, npmi_full)
+    print(f"    NPMI computed for {len(npmi_full):,} pairs")
+
     G = prune_graph(G_full, top_n=180, min_edge_weight=2)
+    # subgraph copies edge attrs, but to be explicit we re-annotate
+    annotate_npmi(G, npmi_full)
     print(f"[2] Pruned graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
-    deg, btw = compute_metrics(G)
+    deg, btw, pr = compute_metrics(G)
     comms = detect_topics(G)
     print(f"[3] Communities (topics): {len(comms)} | sizes: {[len(c) for c in comms[:8]]}")
 
@@ -550,25 +717,55 @@ def main():
 
     # --- Renders -----------------------------------------------------------
     render_network(G, comms, deg, OUT / "infranodus_cap1_network.png",
-                   title="InfraNodus — Capítulo 1 · rede de co-ocorrência (janela=4)",
+                   title="Rede textual — Capítulo 1 (co-ocorrência, janela=4)",
                    label_top=50)
+
+    render_network_pmi(G, comms, pr,
+                        OUT / "infranodus_cap1_pmi.png",
+                        title="Rede textual — Capítulo 1",
+                        npmi_threshold=0.20, label_top=55)
 
     # focused render: only top 100 nodes by degree
     top_nodes = {n for n, _ in sorted(deg.items(), key=lambda x: x[1], reverse=True)[:100]}
     G_focus = G.subgraph(top_nodes).copy()
+    annotate_npmi(G_focus, npmi_full)
     G_focus.remove_edges_from([(u, v) for u, v, d in G_focus.edges(data=True) if d["weight"] < 3])
     G_focus.remove_nodes_from(list(nx.isolates(G_focus)))
     if G_focus.number_of_nodes():
         comms_focus = detect_topics(G_focus)
-        deg_focus = dict(G_focus.degree(weight="weight"))
+        deg_focus, btw_focus, pr_focus = compute_metrics(G_focus)
         render_network(G_focus, comms_focus, deg_focus,
                        OUT / "infranodus_cap1_focus.png",
-                       title="InfraNodus — Capítulo 1 · núcleo (top-100, peso ≥ 3)",
+                       title="Rede textual — Capítulo 1 · núcleo (top-100, peso ≥ 3)",
                        label_top=60)
+        render_network_pmi(G_focus, comms_focus, pr_focus,
+                            OUT / "infranodus_cap1_focus_pmi.png",
+                            title="Rede textual — Capítulo 1 · núcleo",
+                            npmi_threshold=0.25, label_top=60)
+        export_for_gephi(G_focus, comms_focus, deg_focus, btw_focus,
+                         OUT / "infranodus_cap1_focus", pr=pr_focus)
+
+    # Gephi export of the full analytic graph
+    export_for_gephi(G, comms, deg, btw, OUT / "infranodus_cap1", pr=pr)
 
     # --- Reports -----------------------------------------------------------
     top_terms = sorted(deg.items(), key=lambda x: x[1], reverse=True)[:30]
     bridges   = sorted(btw.items(), key=lambda x: x[1], reverse=True)[:20]
+    top_pr    = sorted(pr.items(), key=lambda x: x[1], reverse=True)[:30]
+
+    # Top NPMI pairs (most surprising co-occurrences) within the pruned graph
+    top_npmi_pairs = sorted(
+        [(u, v, d.get("npmi", 0.0), d["weight"]) for u, v, d in G.edges(data=True)],
+        key=lambda x: x[2], reverse=True,
+    )[:25]
+
+    # Term ranking *shift* between frequency-based and PageRank-based views
+    rank_deg = {w: i for i, (w, _) in enumerate(sorted(deg.items(), key=lambda x: x[1], reverse=True))}
+    rank_pr  = {w: i for i, (w, _) in enumerate(sorted(pr.items(), key=lambda x: x[1], reverse=True))}
+    rank_shift = sorted(
+        ((w, rank_deg[w] - rank_pr[w]) for w in rank_deg),
+        key=lambda x: x[1], reverse=True,
+    )[:15]  # positive = under-rated by frequency
 
     topics_md_lines = []
     for i, c in enumerate(comms[:8]):
@@ -584,13 +781,16 @@ def main():
             f"densidade ponderada de ligação = {density:.4f}"
         )
 
-    report = f"""# InfraNodus — Capítulo 1
+    report = f"""# Análise de rede textual — Capítulo 1
 
-> Análise de rede textual no estilo InfraNodus (Paranyushkin 2019) aplicada ao
-> arquivo `{SRC.name}`. O texto foi limpo de comandos LaTeX, citações e notas
-> de rodapé foram preservadas e reincorporadas; foi aplicada uma janela
-> deslizante de 4 tokens com pesos decrescentes pela distância. Comunidades
-> (tópicos latentes) foram detectadas por Louvain ponderado.
+> Análise de rede textual (*text network analysis*, Paranyushkin 2019)
+> aplicada ao arquivo `{SRC.name}`. O texto foi limpo de comandos LaTeX,
+> citações e notas de rodapé foram reincorporadas; janela deslizante de
+> 4 *tokens* com pesos decrescentes pela distância (3-2-1). Comunidades
+> detectadas por Louvain ponderado. Esta versão acrescenta duas métricas
+> *informativas* que não dependem da frequência bruta: **PageRank** dos
+> nós e **NPMI** das arestas. As métricas baseadas em frequência são
+> mantidas em paralelo, para comparação.
 
 ## 1. Resumo quantitativo
 - Tokens significativos: **{len(tokens):,}**
@@ -598,26 +798,55 @@ def main():
 - Grafo analítico (top {180} nós, peso ≥ 2, maior componente): **{G.number_of_nodes()}** nós · **{G.number_of_edges()}** arestas
 - Tópicos detectados (Louvain): **{len(comms)}**
 
-## 2. Conceitos mais influentes (degree ponderado)
+## 2. Conceitos mais influentes (degree ponderado · *baseline* frequentista)
 | # | termo | grau ponderado |
 |---|-------|----------------|
 """ + "\n".join(f"| {k+1} | `{w}` | {d:.0f} |" for k, (w, d) in enumerate(top_terms)) + f"""
 
-## 3. Pontes conceituais (betweenness — termos que costuram tópicos)
+## 3. Conceitos mais influentes (PageRank · centralidade na rede)
+PageRank pondera a importância de um nó pela importância dos seus
+vizinhos. Termos pouco frequentes mas bem posicionados na rede sobem;
+termos frequentes mas perifericamente conectados descem.
+
+| # | termo | PageRank |
+|---|-------|----------|
+""" + "\n".join(f"| {k+1} | `{w}` | {v:.4f} |" for k, (w, v) in enumerate(top_pr)) + f"""
+
+## 4. Termos mais subvalorizados pela frequência (degree → PageRank)
+Diferença de posição (rank por degree) − (rank por PageRank). Valor
+positivo = o termo é *mais central na rede* do que sugere sua frequência.
+
+| # | termo | degree-rank | pagerank-rank | salto |
+|---|-------|-------------|----------------|-------|
+""" + "\n".join(f"| {k+1} | `{w}` | {rank_deg[w]+1} | {rank_pr[w]+1} | +{shift} |"
+                  for k, (w, shift) in enumerate(rank_shift)) + f"""
+
+## 5. Pontes conceituais (betweenness — termos que costuram tópicos)
 | # | termo | betweenness |
 |---|-------|-------------|
 """ + "\n".join(f"| {k+1} | `{w}` | {v:.4f} |" for k, (w, v) in enumerate(bridges)) + f"""
 
-## 4. Tópicos latentes (comunidades Louvain)
+## 6. Pares de termos com associação mais surpreendente (NPMI)
+NPMI mede *quão surpreendente* é a co-ocorrência de duas palavras dadas
+suas frequências individuais. Diferente do peso bruto, ele faz aparecer
+pares semanticamente fortes mesmo quando os termos co-ocorrem poucas
+vezes.
+
+| # | termo A | termo B | NPMI | co-ocorr. (peso) |
+|---|---------|---------|------|------------------|
+""" + "\n".join(f"| {k+1} | `{u}` | `{v}` | {n:.3f} | {w:.0f} |"
+                  for k, (u, v, n, w) in enumerate(top_npmi_pairs)) + f"""
+
+## 7. Tópicos latentes (comunidades Louvain)
 {chr(10).join(topics_md_lines)}
 
-## 5. Lacunas estruturais (pares de tópicos fracamente conectados)
-Em InfraNodus, lacunas estruturais sinalizam *espaços de ideia* pouco
-articulados no texto — candidatos a aprofundamento argumentativo.
+## 8. Lacunas estruturais (pares de tópicos fracamente conectados)
+Lacunas estruturais sinalizam *espaços de ideia* pouco articulados no
+texto — candidatos a aprofundamento argumentativo.
 
 {chr(10).join(gaps_md_lines)}
 
-## 6. Leitura interpretativa
+## 9. Leitura interpretativa
 
 **O que a rede mostra.** O núcleo do capítulo gira em torno de um eixo
 *tese ↔ pesquisa ↔ rede ↔ C4AI ↔ IBM*, com Latour, Stengers, Mol, Law e
@@ -639,10 +868,35 @@ onto-epistemológico). Há aí um convite a costurar mais explicitamente
 descrito por Barad, e *como* a economia especulativa de promessas
 (Stengers) se materializa na cadeia GPU→modelo→artigo.
 
-## 7. Arquivos gerados
-- `infranodus_cap1_network.png` — rede completa com cores por tópico.
-- `infranodus_cap1_focus.png` — núcleo (top-100 nós, peso ≥ 3).
-- `infranodus_cap1_metrics.json` — métricas brutas (degree, betweenness, comunidades).
+## 10. Arquivos gerados
+**Visões frequentistas (mantidas)**
+- `infranodus_cap1_network.png` — rede completa, tamanho por degree.
+- `infranodus_cap1_focus.png` — núcleo (top-100, peso ≥ 3).
+
+**Visões informativas (novas)**
+- `infranodus_cap1_pmi.png` — rede completa, tamanho por **PageRank**,
+  arestas filtradas por **NPMI ≥ 0,20**.
+- `infranodus_cap1_focus_pmi.png` — núcleo, NPMI ≥ 0,25.
+
+**Dados**
+- `infranodus_cap1_metrics.json` — métricas brutas (degree, betweenness,
+  PageRank, NPMI, comunidades, lacunas).
+- `infranodus_cap1.gexf` / `infranodus_cap1_focus.gexf` — grafos para Gephi
+  já com `community`, `frequency`, `degree_weighted`, `betweenness`,
+  `pagerank` (nós) e `weight`, `npmi` (arestas).
+- `infranodus_cap1_nodes.csv` / `infranodus_cap1_edges.csv` (e `_focus_*`)
+  — fallback em planilha; CSVs trazem todas as colunas acima.
+
+## 11. Como abrir no Gephi
+1. Instale Gephi (≥ 0.10): https://gephi.org/users/download/
+2. `File → Open…` → selecione `infranodus_cap1.gexf` (ou `_focus.gexf`).
+3. No painel **Appearance**: já vem com cor por `community` e tamanho por
+   `degree_weighted` (embutidos via atributos `viz`). Ajuste se quiser.
+4. Em **Layout**: aplique *ForceAtlas 2* (ative *Prevent Overlap* e
+   *Dissuade Hubs*) por ~30 s; ou *Fruchterman-Reingold* para algo mais rápido.
+5. Em **Statistics**: rode *Modularity* e *Average Path Length* se quiser
+   recalcular comunidades dentro do Gephi (resultados serão semelhantes).
+6. Em **Preview**: ative *Node Labels*, escolha fonte e exporte para PDF/SVG.
 """
 
     (OUT / "infranodus_cap1_report.md").write_text(report, encoding="utf-8")
@@ -652,7 +906,17 @@ descrito por Barad, e *como* a economia especulativa de promessas
         "graph_full": {"nodes": G_full.number_of_nodes(), "edges": G_full.number_of_edges()},
         "graph_pruned": {"nodes": G.number_of_nodes(), "edges": G.number_of_edges()},
         "top_terms_degree": [{"term": w, "degree": d} for w, d in top_terms],
+        "top_terms_pagerank": [{"term": w, "pagerank": v} for w, v in top_pr],
         "top_terms_betweenness": [{"term": w, "betweenness": v} for w, v in bridges],
+        "underrated_by_frequency": [
+            {"term": w, "degree_rank": rank_deg[w] + 1,
+             "pagerank_rank": rank_pr[w] + 1, "shift": shift}
+            for (w, shift) in rank_shift
+        ],
+        "top_npmi_pairs": [
+            {"a": u, "b": v, "npmi": n, "cooccurrence_weight": w}
+            for (u, v, n, w) in top_npmi_pairs
+        ],
         "communities": [
             {"id": i, "size": len(c), "label": label_topic(c, deg, k=8), "members": sorted(c)}
             for i, c in enumerate(comms)
@@ -667,6 +931,7 @@ descrito por Barad, e *como* a economia especulativa de promessas
 
     print("[4] Wrote:")
     for p in ["infranodus_cap1_network.png", "infranodus_cap1_focus.png",
+              "infranodus_cap1_pmi.png", "infranodus_cap1_focus_pmi.png",
               "infranodus_cap1_report.md", "infranodus_cap1_metrics.json"]:
         print("    -", OUT / p)
 

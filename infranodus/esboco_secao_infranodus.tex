@@ -1,0 +1,200 @@
+% =====================================================================
+% Capítulo 1 — Esboço de seção/interlúdio
+% Sugestão de inserção: imediatamente após o parágrafo que termina com
+% "[...] fazer alianças \parencite{stengers2010cosmopolitics1}." (tese
+% como inscrição tecnocientífica), e antes do parágrafo que abre com
+% "De certo modo, em sintonia com as críticas de Haraway e Stengers [...]".
+%
+% Observação técnica: para o build do LaTeX encontrar a figura, copie
+%   infranodus/infranodus_cap1_focus.png
+% para
+%   figuras/cap.1/infranodus_cap1_focus.png
+% (mantendo a convenção do capítulo). O caminho abaixo já assume essa
+% localização. Se preferir manter a figura em `infranodus/`, basta ajustar
+% o argumento de \includegraphics.
+% =====================================================================
+
+\subsection*{Interlúdio: a tese como inscrição que se mede a si mesma}
+
+Se esta tese é uma inscrição tecnocientífica, então ela mesma pode ser
+submetida ao tipo de tratamento que ela aplica aos seus interlocutores:
+pode ser convertida em traço, em diagrama, em superfície combinável.
+\textcite{Latour1986Visualization} sugere que a força de uma inscrição
+está em ser \textit{móvel imutável}, isto é, transportável e
+recombinável em uma única superfície plana onde inscrições heterogêneas
+passam a ser comparadas. Os centros de cálculo, segue Latour, agem à
+distância porque acumulam essas superfícies. O que ofereço aqui é um
+gesto experimental e propositadamente recursivo: tomo o texto deste
+capítulo como objeto e o submeto a uma \textbf{análise de rede textual}
+(\textit{text network analysis}), método em que o texto é representado
+como grafo de co-ocorrência de termos e as comunidades desse grafo são
+lidas como tópicos latentes. A formulação contemporânea do método
+deriva da tradição mais ampla das \textit{redes de co-ocorrência
+lexical} \parencite{ferrercancho2001small} e da \textit{análise de
+redes semânticas} \parencite{diesner2005revealing}, e foi sistematizada
+por \textcite{paranyushkin2019infranodus} no \textit{pipeline} que aqui
+reproduzo.\footnote{A análise foi conduzida com um \textit{script} em
+Python que reproduz a metodologia descrita por
+\textcite{paranyushkin2019infranodus}: o texto do capítulo, depurado
+dos comandos \LaTeX{} e com as notas de rodapé reincorporadas ao
+corpus, foi tokenizado em \textit{lemas} e percorrido por uma janela
+deslizante de quatro \textit{tokens}; cada par de termos co-ocorrentes
+na janela recebeu um peso decrescente com a distância (3, 2, 1). O
+grafo ponderado foi podado para os 180 termos mais frequentes e para
+arestas com peso $\geq 2$; em seguida, foram detectadas comunidades
+pelo algoritmo de Louvain ponderado \parencite{blondel2008fast} e
+calculadas medidas de \textit{degree} ponderado e \textit{betweenness
+centrality}. Os artefatos da análise estão depositados em
+\texttt{infranodus/} no repositório desta tese (\texttt{.gexf} para
+\textit{Gephi}, \texttt{.png}, \texttt{.csv}, e relatório
+\texttt{.md}).}
+
+A leitura desse grafo é, ela própria, uma operação de tradução: cada
+nó é um termo, cada aresta é uma co-ocorrência, e cada cor é uma
+comunidade detectada por um algoritmo cuja lógica é tão alheia à
+hermenêutica antropológica quanto as redes neurais que descrevo nos
+Capítulos~\ref{capitulo3} e~\ref{capitulo4}. E, ainda assim, ele me
+devolve algo. Os termos com maior \textit{degree} ponderado neste
+capítulo são, em ordem, \textit{pesquisa}, \textit{ciência},
+\textit{rede}, \textit{pesquisador(a)}, \textit{modelo},
+\textit{humano}, \textit{objeto}, \textit{inteligência},
+\textit{artificial}, \textit{campo} e \textit{etnografia}. Os termos
+que mais costuram comunidades distintas (maior \textit{betweenness}) são
+\textit{ciência}, \textit{pesquisa}, \textit{rede} e \textit{pesquisador(a)}:
+não termos teóricos densos, mas justamente os termos genéricos que
+permitem o trânsito entre o vocabulário ator-rede, o vocabulário das
+ciências sociais e o vocabulário da inteligência artificial. A própria
+condição de \textit{ponte}, no sentido que \textcite{Latour1986Visualization}
+dá ao termo, parece coincidir aqui com a condição de \textit{tradutor}
+no sentido latouriano mais amplo \parencite{Latour2011CienciaEmAcao}.
+
+A detecção de comunidades estabilizou seis tópicos
+latentes:\footnote{Os rótulos abaixo correspondem aos quatro a seis
+termos de maior \textit{degree} dentro de cada comunidade; preservo a
+forma lematizada produzida pelo \textit{script} para evitar tradução
+interpretativa precoce.}
+(i)~\textit{escrita} e \textit{composição} em torno de
+\textit{pesquisador}, \textit{modelo}, \textit{objeto}, \textit{Claude};
+(ii)~vocabulário \textbf{ator-rede} em torno de \textit{rede},
+\textit{Latour}, \textit{agência}, \textit{ator}, \textit{diagrama},
+\textit{distribuída};
+(iii)~\textbf{ciências sociais e campo} em torno de \textit{ciência},
+\textit{sociais}, \textit{dado}, \textit{conhecimento},
+\textit{cientista};
+(iv)~\textbf{IA e etnografia} em torno de \textit{pesquisa},
+\textit{inteligência}, \textit{artificial}, \textit{etnografia},
+\textit{construção}, \textit{técnico};
+(v)~\textbf{humano-máquina-método} em torno de \textit{humano},
+\textit{método}, \textit{existência}, \textit{máquina},
+\textit{parcial};
+(vi)~um cluster periférico em torno de \textit{Simondon},
+\textit{técnica} e \textit{alienação}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth,keepaspectratio]{figuras/cap.1/infranodus_cap1_focus.png}
+\caption[Rede textual do Capítulo~\ref{capitulo1} (\textit{text network
+analysis})]{Rede textual do Capítulo~\ref{capitulo1}
+(\textit{text network analysis}). Os nós são os 100 termos com maior
+\textit{degree} ponderado; o tamanho do nó é proporcional ao
+\textit{degree}; a cor indica a comunidade detectada por Louvain
+ponderado; arestas com peso~$\geq 3$. Versão de alta resolução,
+arquivo \texttt{.gexf} para o \textit{Gephi} e relatório completo
+disponíveis em \texttt{infranodus/} no repositório desta tese.}
+\label{fig:infranodus-cap1}
+\end{figure}
+
+O que essa cartografia me dá não é uma confirmação, mas um conjunto de
+\textit{chamadas de atenção}. A primeira é uma confirmação modesta:
+os termos centrais do grafo coincidem com os conceitos que mobilizo
+explicitamente, e os pontos de maior intermediação são justamente os
+termos mais genéricos do capítulo --- o que sugere que a costura
+argumentativa está sendo feita por palavras-coringa que ainda esperam
+serem teorizadas com mais força. A segunda é uma surpresa: as duas
+comunidades com a ligação ponderada mais fraca entre si são a das
+\textbf{ciências sociais} (Tópico~iii) e a do par
+\textbf{humano-máquina-método} (Tópico~v).
+Em outras palavras, o grafo registra uma fissura textual entre o
+vocabulário das ciências sociais com que escrevo e o vocabulário da
+simetria humano/não-humano com que prometo escrever. A formulação de
+\textcite{Law2004After} sobre o \textit{method assemblage} ajuda a
+nomear o que isso quer dizer: a \textit{otherness} apagada para que a
+presença se sustente é, neste capítulo, a articulação entre os dois
+registros que ainda preciso fazer trabalhar juntos. A terceira chamada
+diz respeito à comunidade periférica em torno de Simondon: ela está no
+grafo, mas mal conectada, sinalizando uma promessa teórica que o
+capítulo abre e que os capítulos subsequentes precisam costurar à rede
+maior, sob risco de virar nota de rodapé errante.
+
+Reconheço o paradoxo do gesto. Aplicar análise de rede textual a um
+capítulo que invoca a teoria ator-rede é arriscar tomar a metáfora
+pelo método; e a similaridade entre os dois usos da palavra
+\textit{rede} é superficial: a rede ator-rede é uma cadeia de
+associações heterogêneas e ontologicamente plana, ao passo que a rede
+textual aqui gerada é um grafo bidimensional de co-ocorrências de
+\textit{tokens} ponderado por proximidade.\footnote{A confusão entre
+os dois sentidos de \textit{rede} é discutida por
+\textcite[pp.~129--132]{latour2005reassembling}, que distingue
+\textit{rede} como ferramenta de inscrição e como diagnóstico
+ontológico. Mantenho a distinção: o que a análise de rede textual
+produz é uma inscrição; o que esta tese descreve é uma rede
+sociotécnica. As duas se encontram apenas no gesto de inscrever uma
+na outra.} Mas talvez seja exatamente isso que justifica
+o gesto: a rede textual não substitui a etnografia, ela funciona como
+mais uma inscrição que esta tese mobiliza, no mesmo registro das
+imagens, dos diagramas e do site que a acompanham. Como qualquer
+inscrição, ela ordena, hierarquiza, inclui e exclui --- ou, em outras
+palavras, faz política ontológica \parencite[p.~143]{Law2004After}. E
+talvez essa seja a versão mais honesta do gesto reflexivo que esta
+tese tenta sustentar: medir o próprio texto pelos mesmos instrumentos
+com que se compromete a medir o C4AI, sabendo que medir é também
+produzir aquilo que se mede.
+
+% =====================================================================
+% Sugestões de entradas bibliográficas (caso ainda não estejam no .bib):
+%
+% @inproceedings{paranyushkin2019infranodus,
+%   author    = {Paranyushkin, Dmitry},
+%   title     = {{InfraNodus}: Generating Insight Using Text Network Analysis},
+%   booktitle = {The World Wide Web Conference (WWW '19)},
+%   year      = {2019},
+%   pages     = {3584--3589},
+%   publisher = {ACM},
+%   doi       = {10.1145/3308558.3314123}
+% }
+%
+% @article{ferrercancho2001small,
+%   author  = {Ferrer i Cancho, Ramon and Sol{\'e}, Ricard V.},
+%   title   = {The small world of human language},
+%   journal = {Proceedings of the Royal Society B: Biological Sciences},
+%   volume  = {268},
+%   number  = {1482},
+%   pages   = {2261--2265},
+%   year    = {2001},
+%   doi     = {10.1098/rspb.2001.1800}
+% }
+%
+% @incollection{diesner2005revealing,
+%   author    = {Diesner, Jana and Carley, Kathleen M.},
+%   title     = {Revealing Social Structure from Texts: Meta-Matrix
+%                Text Analysis as a Novel Method for Network Text Analysis},
+%   booktitle = {Causal Mapping for Information Systems and Technology Research:
+%                Approaches, Advances, and Illustrations},
+%   editor    = {Narayanan, V. K. and Armstrong, D. J.},
+%   publisher = {Idea Group Publishing},
+%   year      = {2005},
+%   pages     = {81--108}
+% }
+%
+% @article{blondel2008fast,
+%   author  = {Blondel, Vincent D. and Guillaume, Jean-Loup and
+%              Lambiotte, Renaud and Lefebvre, Etienne},
+%   title   = {Fast unfolding of communities in large networks},
+%   journal = {Journal of Statistical Mechanics: Theory and Experiment},
+%   volume  = {2008},
+%   number  = {10},
+%   pages   = {P10008},
+%   year    = {2008},
+%   doi     = {10.1088/1742-5468/2008/10/P10008}
+% }
+% =====================================================================
